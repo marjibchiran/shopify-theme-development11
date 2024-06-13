@@ -265,12 +265,14 @@
     {% comment %} Cart Drawer {% endcomment %}
 
     {% comment %} Header group sections {% endcomment %}
+     {% sections 'header-group' %}
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
 
     {% comment %} Footer group sections {% endcomment %}
+     {% sections 'footer-group' %}
 
     <script>
       window.shopUrl = '{{ request.origin }}';
