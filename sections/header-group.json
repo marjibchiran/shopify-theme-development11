@@ -5,6 +5,7 @@
     "announcementbar": {
       "type": "announcementbar",
       "settings": {
+        "message": "Hey! Free Shipping Domestic Orders Over $40 International Orders Over $60"
       }
     },
     "header": {
