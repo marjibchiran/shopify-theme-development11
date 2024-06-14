@@ -22,7 +22,7 @@
                       </a>
                       <ul class="dropdown-menu">
                         {% for child in link.links %}
-                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="{{ child.url }}"> {{ child.title }} </a></li>
                         {% endfor %}
                       </ul>
                   </li>
