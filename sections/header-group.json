@@ -5,11 +5,13 @@
     "announcementbar": {
       "type": "announcementbar",
       "settings": {
+        "message": "Free Shipping Domestic Orders Over $40 International Orders Over $60"
       }
     },
     "header": {
       "type": "header",
       "settings": {
+        "menu": "main-menu"
       }
     }
   },
