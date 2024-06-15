@@ -3,12 +3,6 @@
     "image_banner": {
       "type": "image-banner",
       "settings": {
-        "image": "shopify:\/\/shop_images\/hero.jpg",
-        "content_width": 75,
-        "heading": "COMFY, COZY, CHIC",
-        "sub-heading": "<p>Sustainable, Yoga clothes, Workout clothes and activewear. Handcrafted in Los Angeles <\/p>",
-        "label_1": "SHOP MOST POPULAR STYLES",
-        "url_1": ""
       }
     }
   },
