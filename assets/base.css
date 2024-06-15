@@ -4,8 +4,25 @@ html{
 body{
     background:#f1f1f1 ;
 }
+
+/*Announcebar Section*/
 p.announce-text.text-center{
     font-size: 24px;
-    padding: 20px;
 }
 
+/*Hero Banner Section*/
+.bg-btn-color{
+    background-color: #e11687;
+}
+.bg-btn-color:hover{
+    background-color: #9b0f5d;
+}
+.container.banner-container {
+    position: relative;
+    bottom: 250px;
+}
+.banner-content {
+    position: absolute;
+    bottom: 400px;
+    align-items: center;
+}
