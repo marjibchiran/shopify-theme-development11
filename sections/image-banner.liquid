@@ -1,34 +1,41 @@
-<style>
-    .banner-content{
-        max-width: {{ section.settings.content_width}}%;
+{% style %}
+    .banner-content {
+        max-width: {{ section.settings.content_width }}%;
     }
-</style>
+    @media (max-width: 768px) {
+        .banner-content {
+            max-width: 100%;
+            padding-left: 80px;
+        }
+    }
+{% endstyle %}
 
-
-<div class="image-banner-{{section.id}}">
-   <div class="image-banner-main">
-    {% if section.settings.image != blank %}
-    <img src="{{section.settings.image |  image_url }}" width="100%" alt="{{shop.name}} Logo">
-    {% else %}
-    {{ 'hero-apparel-1'| placeholder_svg_tag: 'placeholder-svg' }}
-    {% endif %}
-
-    <div class="container banner-container">
-        <div class="banner-content text-white fs-5">
-            <h1>{{ section.settings.heading }}</h1>
-            {% if section.settings.sub-heading != blank %}
-            <p>{{ section.settings.sub-heading }}</p>
-            {% endif %}
-            <div class="banner-CTA">
-            <div class="cta-action">
-             <a href="{{ section.settings.url_1 }}" class="btn bg-btn-color text-white px-3 py-2">{{ section.settings.label_1 }}</a>
+<div class="image-banner-{{ section.id }}">
+    <div class="image-banner-main">
+        {% if section.settings.image != blank %}
+            {% assign image_width = section.settings.image.width | divided_by: section.settings.image.aspect_ratio %}
+            {{ section.settings.image | image_url: width:1975 | image_tag: width: 1975, heights: image_width, fetchpriority:'auto' }}
+        {% else %}
+            {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+        {% endif %}
+        <div class="container banner-container">
+            <div class="banner-content text-white fs-5">
+                <h1>{{ section.settings.heading }}</h1>
+                {% if section.settings.sub-heading != blank %}
+                    <p>{{ section.settings.sub-heading }}</p>
+                {% endif %}
+                <div class="banner-CTA">
+                    <div class="cta-action">
+                        <a href="{{ section.settings.url_1 }}" class="btn bg-btn-color text-white px-3 py-2">{{ section.settings.label_1 }}</a>
+                    </div>
+                </div>   
             </div>
-            </div>   
         </div>
-       </div>
-   </div>
+    </div>
 </div>
-{% schema  %} 
+
+
+{% schema %}
 {
     "name": "Image Banner",
     "settings": [
@@ -49,7 +56,7 @@
             "max": 100,
             "step": 1,
             "unit": "%",
-            "default":60
+            "default": 60
         },
         {
             "type": "text",
