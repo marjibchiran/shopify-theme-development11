@@ -4,7 +4,7 @@
       "type": "image-banner",
       "settings": {
         "image": "shopify:\/\/shop_images\/hero.jpg",
-        "content_width": 60,
+        "content_width": 75,
         "heading": "COMFY, COZY, CHIC",
         "sub-heading": "",
         "label_1": "SHOP MOST POPULAR STYLES",
