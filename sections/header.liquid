@@ -1,5 +1,5 @@
 <div class="header-section">
-    <nav class="navbar navbar-expand-lg bg-white">
+    <nav class="navbar navbar-expand-lg bg-white py-0">
         <div class="container-fluid">
           <a class="navbar-brand" href="{{ shop.url }}">
             {% if settings.logo != blank %}
@@ -13,7 +13,7 @@
           </button>
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav me-auto mb-lg-0">
               {% for link in section.settings.menu.links %}
               <li class="nav-item {% if link.links.size > 0 %}dropdown{% endif %}">
                 <a class="nav-link {% if link.links.size > 0 %}dropdown-toggle{% endif %}" href="{{ link.url }}" {% if link.links.size > 0 %}role="button" data-bs-toggle="dropdown" aria-expanded="false"{% endif %}>
