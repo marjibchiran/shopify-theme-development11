@@ -1,11 +1,18 @@
 {
-    "sections": {
-        "image_banner": {
-            "type": "image-banner",
-            "settings": {}
-        }
-    },
-    "order":[
-        "image_banner"
-    ]
+  "sections": {
+    "image_banner": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/hero.jpg",
+        "content_width": 60,
+        "heading": "COMFY, COZY, CHIC",
+        "sub-heading": "",
+        "label_1": "SHOP MOST POPULAR STYLES",
+        "url_1": ""
+      }
+    }
+  },
+  "order": [
+    "image_banner"
+  ]
 }
