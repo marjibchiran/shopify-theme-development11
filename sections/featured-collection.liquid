@@ -1,0 +1,81 @@
+{% assign collection = section.settings.collection.products %}
+
+<div class="featured-collection-section">
+    <div class="container">
+        <div class="section-header">
+            <h1 class="heading text-center mt-5">{{ section.settings.heading }}</h1>
+            {% if section.settings.sub_heading != blank %}
+           <div class="sub-heading">{{ section.settings.sub_heading }}</div>
+           {%endif%}
+        </div>
+    <div class="row">
+        {% for product in collection  %}
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card my-3">
+                <div class="card-body py-4 shadow-lg">
+                    {{ product.featured_image |  image_url: width: 300 |  image_tag  }}
+                  <div class="product_info pt-4">
+                   <p><strong>{{product.title}}</strong></p>
+                   <p>Price: {{ product.price |  money }}</p>
+                   <div class="CTA">
+                    <a href="{{ product.url }}" class="btn btn-success w-100">View Details</a>
+                   </div>
+                  </div>  
+                </div>
+            </div>
+        </div>
+        {% else %}
+            {% for item in (1..8) %}
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="card my-3">
+                        <div class="card-body">
+                            {%- capture current -%}
+                                {%- cycle 1, 2, 3, 4 -%}
+                                {%- endcapture -%}
+                                    {{ 'product-apparel-' |  append: current |  placeholder_svg_tag: 'placeholder-svg' }}
+                                    {{ product.featured_image |  image_url: width: 300 |  image_tag  }}
+                            <div class="product_info">
+                                <h4>Product:{{ forloop.index }}</h4>
+                                <p>Price:$88.00</p>
+                                <div class="CTA">
+                                    <a href="#" class="btn btn-success">View Details</a>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endfor %}
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "Featured Collection",
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "Featured Collection"
+        },
+        {
+            "type": "richtext",
+            "id": "sub_heading",
+            "label": "Sub Heading"
+        },
+        {
+            "type": "collection",
+            "id": "collection",
+            "label": "Select Collection"
+        }
+        ],
+        "presets": [
+            {
+                "name": "Featured Collection",
+                "category": "Collection"
+            }
+        ]
+}
+{% endschema %}
