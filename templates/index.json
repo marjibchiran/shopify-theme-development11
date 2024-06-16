@@ -3,10 +3,25 @@
     "image_banner": {
       "type": "image-banner",
       "settings": {
+        "image": "shopify:\/\/shop_images\/hero.jpg",
+        "content_width": 60,
+        "heading": "COMFY, COZY, CHIC",
+        "sub-heading": "",
+        "label_1": "SHOP MOST POPULAR STYLES",
+        "url_1": ""
+      }
+    },
+    "featured_collection_cUcPnV": {
+      "type": "featured-collection",
+      "settings": {
+        "heading": "Featured Collection",
+        "sub_heading": "",
+        "collection": "leggings"
       }
     }
   },
   "order": [
-    "image_banner"
+    "image_banner",
+    "featured_collection_cUcPnV"
   ]
 }
