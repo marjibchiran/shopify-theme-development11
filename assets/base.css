@@ -21,11 +21,17 @@ html{
         position: absolute;
         bottom: 450px;
     }
-    
-    
-    @media screen and (min-width:768px) {
-        .image-banner-main img{
-            width: 100%;
-            height: auto;
-        }
+   /* Featured Collection*/
+    .card-body img {
+        width: 100%;
+        height: auto;
+}
+
+
+
+@media screen and (min-width:768px) {
+    .image-banner-main img{
+        width: 100%;
+        height: auto;
     }
+}
