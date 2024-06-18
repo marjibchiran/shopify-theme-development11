@@ -3,25 +3,10 @@
     "image_banner": {
       "type": "image-banner",
       "settings": {
-        "image": "shopify:\/\/shop_images\/hero.jpg",
-        "content_width": 60,
-        "heading": "COMFY, COZY, CHIC",
-        "sub-heading": "<p>Sustainable, Yoga clothes, Workout clothes and activewear. Handcrafted in America<\/p>",
-        "label_1": "SHOP MOST POPULAR STYLES",
-        "url_1": ""
-      }
-    },
-    "featured_collection_8XYYUx": {
-      "type": "featured-collection",
-      "settings": {
-        "heading": "Featured Collection",
-        "sub_heading": "",
-        "collection": "leggings"
       }
     }
   },
   "order": [
-    "image_banner",
-    "featured_collection_8XYYUx"
+    "image_banner"
   ]
 }

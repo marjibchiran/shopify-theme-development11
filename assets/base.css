@@ -4,12 +4,10 @@ html{
     body{
     background:#f1f1f1 ;
     }
-    
     /*Announcebar Section*/
     p.announce-text.text-center{
     font-size: 24px;
     }
-    
     /*Hero Banner Section*/
     .bg-btn-color{
     background-color: #e11687;
@@ -26,7 +24,11 @@ html{
         width: 100%;
         height: auto;
 }
-
+/* Multicolumn Section*/
+svg.placeholder-svg {
+    width: 100%;
+    height: auto;
+}
 
 
 @media screen and (min-width:768px) {
