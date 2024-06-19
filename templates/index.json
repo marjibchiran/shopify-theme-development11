@@ -26,10 +26,58 @@
         "sub_heading": "",
         "collection": "leggings"
       }
+    },
+    "multicolumn_zTCr7M": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_Y8rW7F": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/HeatherCharcoalFullLengthPocketLeggings_800x_cdd04a0b-729c-4920-bb57-3d225f4e43f6.jpg",
+            "title": "Column title",
+            "rte": "<p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, facilis sit amet!<\/p>"
+          }
+        },
+        "column_KbRJQn": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/HeatherCharcoalFullLengthPocketLeggings_800x_cdd04a0b-729c-4920-bb57-3d225f4e43f6.jpg",
+            "title": "Column title",
+            "rte": "<p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, facilis sit amet!<\/p>"
+          }
+        },
+        "column_JwWDzT": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/HeatherCharcoalFullLengthPocketLeggings_800x_cdd04a0b-729c-4920-bb57-3d225f4e43f6.jpg",
+            "title": "Column title",
+            "rte": "<p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, facilis sit amet!<\/p>"
+          }
+        },
+        "column_xWiG9G": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/HeatherCharcoalFullLengthPocketLeggings_800x_cdd04a0b-729c-4920-bb57-3d225f4e43f6.jpg",
+            "title": "Column title",
+            "rte": "<p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, facilis sit amet!<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "column_Y8rW7F",
+        "column_KbRJQn",
+        "column_JwWDzT",
+        "column_xWiG9G"
+      ],
+      "settings": {
+        "heading": "Multicolumn title",
+        "sub_heading": ""
+      }
     }
   },
   "order": [
     "image_banner",
-    "featured_collection_yW9Nrh"
+    "featured_collection_yW9Nrh",
+    "multicolumn_zTCr7M"
   ]
 }
