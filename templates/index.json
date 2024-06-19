@@ -1,12 +1,35 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "image_banner": {
       "type": "image-banner",
       "settings": {
+        "content_width": 60,
+        "heading": "COMFY, COZY, CHIC",
+        "sub-heading": "<p>Sustainable, Yoga clothes, Workout clothes and activewear. Handcrafted in America<\/p>",
+        "label_1": "SHOP MOST POPULAR STYLES",
+        "url_1": ""
+      }
+    },
+    "featured_collection_yW9Nrh": {
+      "type": "featured-collection",
+      "settings": {
+        "heading": "Featured Collection",
+        "sub_heading": "",
+        "collection": "leggings"
       }
     }
   },
   "order": [
-    "image_banner"
+    "image_banner",
+    "featured_collection_yW9Nrh"
   ]
 }
