@@ -1,0 +1,122 @@
+{{ 'product-template.css' |  asset_url | stylesheet_tag  }}
+
+<div class="product-template-{{ section.id }}">
+    <div class="main-product">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+            <div class="product-media">
+                {% for image in product.images %}
+                    {{ image.src | image_url: width: 500 | image_tag }}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-md-6">
+          <div class="product-imformation">
+            {%  assign form_id = 'product-form-'| append: section.id %}
+            {% form 'product', product, id:form_id, class: 'product-form' %}
+                <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant }}">
+                {{ form |  payment_terms }}
+
+                {% for block in section.blocks %}
+                    {% case block.type %}
+                        {% when '@app' %}
+                            {% render block %}
+                        {% when 'text' %}
+                           <p>{{ block.settings.text }}</p>  
+                        {% when 'title' %}        
+                           <h1 class="product_title">{{ product.title }}</h1>
+                        {% when 'price' %}
+                            <div class="product_price">
+                                <p>{{ product.price |  money_with_currency }}</p>
+                            </div>
+                        {% when 'sku' %}
+                                <div class="product_sku">
+                                    <p>{{ product.sku }}</p>
+                                </div> 
+                        {% when 'description' %}   
+                            <div class="product_description">
+                                {{ product.description }}
+                            </div>      
+                        {% when 'quantity' %}
+                                <div class="product_quantity">
+                                    <input type="number" name="quantity" value="1" min="1">
+                                </div>            
+                        {% when 'buy_buttons' %}
+                            <div class="cart_button my-4">
+                                <button type="submit" class="btn btn-success w-100 mb-2" name="add">Add to Cart</button>
+                                {% if block.settings.enable_dynamic_button %}
+                                    {{ form |  payment_button }}
+                                {% endif %}
+                            </div>    
+                        {% else %}
+                    {% endcase %}
+                {% endfor %}
+            {% endform %}
+          </div>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "product template",
+    "class": "product-template",
+    "settings": [],
+    "blocks": [
+        {
+            "type": "@app"
+        },
+        {
+            "type": "text",
+            "name": "Text",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "text",
+                    "label": "text",
+                    "default": "{{ product.vendor }}"
+                }
+            ]
+        },
+        {
+            "type": "title",
+            "name": "title"
+        },
+        {
+            "type": "price",
+            "name": "Price",
+            "limit": 1
+        },
+        {
+            "type": "sku",
+            "name": "SKU",
+            "limit": 1
+        },
+        {
+            "type": "quantity",
+            "name": "Quantity",
+            "limit": 1
+        },
+        {
+            "type": "buy_buttons",
+            "name": "Buy Button",
+            "limit": 1,
+            "settings": [
+                {
+                    "type": "checkbox",
+                    "id": "enable_dynamic_button",
+                    "label": "Enable Buy Now",
+                    "default": true
+                }
+            ]
+        },
+        {
+            "type": "description",
+            "name": "Description"
+        }
+    ]
+}
+{% endschema %}
