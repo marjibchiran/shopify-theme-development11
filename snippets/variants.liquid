@@ -1,17 +1,29 @@
 <div class="product_variants my-3">
     <div class="product_options my-3">
-    {% for option in product.options_with_values %}
-        <strong>{{ option.name }}</strong><br>
-        {% for value in option.values  %}
-            <input type="radio" id="{{ value.name | downcase | replace:' ', '_'  }}" name="{{ option.name | downcase }}" value="{{ value.name }}">
-            <label for="{{ value.name |  downcase | replace:' ', '_' }}">{{ value.name }}</label>
+        {% for option in product.options_with_values %}
+            <strong>{{ option.name }}</strong><br>
+            {% if variant_type == 'pills' %}
+                {% for value in option.values %}
+                    <label class="variant-pill" for="{{ value.name | downcase }}">
+                        <input type="radio" id="{{ value.name | downcase }}" name="{{ option.name | downcase }}" value="{{ value.name }}">
+                        <span class="variant_button">{{ value.name }}</span>
+                    </label>
+                {% endfor %}
+            {% else %}
+                <div class="variant_selector">
+                    <select class="variant_select form-control w-50">
+                        {% for value in option.values %}
+                            <option value="{{ value.name }}">{{ value.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            {% endif %}
+            <br>
         {% endfor %}
-        <br>
-    {% endfor %}
     </div>
-<select name="variant">
-    {% for variant in product.variants %}
-        <option value="{{ variant.id }}">{{ variant.title }}</option>
-    {% endfor %}
-</select>
+    <select name="variant">
+        {% for variant in product.variants %}
+            <option value="{{ variant.id }}">{{ variant.title }}</option>
+        {% endfor %}
+    </select>
 </div>

@@ -47,7 +47,7 @@
                                         {% render 'variants', product: product, variant_type: variant_type %}
                                     {% when 'buy_buttons' %}
                                         <div class="cart_button my-4">
-                                            <button type="submit" class="btn btn-success w-100 mb-2" name="add">Add to Cart</button>
+                                            <button type="submit" class="btn btn-custom w-100 mb-2" name="add">Add to Cart</button>
                                             {% if block.settings.enable_dynamic_button %}
                                                 {{ form | payment_button }}
                                             {% endif %}
