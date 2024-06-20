@@ -18,8 +18,13 @@
             "text": "{{ product.vendor}}"
           }
         },
-        "title_NbCUEP": {
+        "title": {
           "type": "title",
+          "settings": {
+          }
+        },
+        "sku": {
+          "type": "sku",
           "settings": {
           }
         },
@@ -33,31 +38,17 @@
           "settings": {
           }
         },
-        "sku_Wqg4cP": {
-          "type": "sku",
-          "settings": {
-          }
-        },
-        "buy_buttons_aVeimD": {
+        "buy_button": {
           "type": "buy_buttons",
           "settings": {
             "enable_dynamic_button": true
-          }
-        },
-        "description_eVDxDH": {
-          "type": "description",
-          "settings": {
           }
         }
       },
       "block_order": [
         "vendor",
-        "title_NbCUEP",
         "price",
-        "quantity_selector",
-        "sku_Wqg4cP",
-        "buy_buttons_aVeimD",
-        "description_eVDxDH"
+        "quantity_selector"
       ],
       "settings": {
       }
