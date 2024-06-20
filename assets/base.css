@@ -12,6 +12,9 @@ html{
     .bg-btn-color{
     background-color: #e11687;
     }
+    .bg-btn-color:hover{
+        background-color: #9b0f5d;
+        }
     .banner-container {
     position: relative;
     }

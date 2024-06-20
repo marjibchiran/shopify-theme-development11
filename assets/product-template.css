@@ -1,3 +1,40 @@
-.product-media img{
+.cart_button {
+    color: white;
+    font-size: 18px;
+}
+
+.btn-custom {
+    background-color: #e11687;
+    color: white;
+    font-size: 18px;
+}
+
+.btn-custom:hover {
+    background-color: #9b0f5d;
+}
+
+.product-media img {
     width: 100%;
+}
+
+.variant-pill {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.variant-pill input[type="radio"] {
+    display: none;
+}
+
+.variant-pill input[type="radio"]:checked + .variant_button {
+    background-color: #9b0f5d;
+   transition: all;
+}
+
+.variant_button {
+    display: inline-block;
+    padding: 5px 10px;
+    color: white;
+    background-color: #e11687;
+    cursor: pointer;
 }
