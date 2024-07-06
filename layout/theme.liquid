@@ -48,7 +48,7 @@
       }
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    {{ 'global.js | asset_url | script_tag' }}
+    {{ 'global.js' |  asset_url |  script_tag }}
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
