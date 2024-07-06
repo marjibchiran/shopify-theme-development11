@@ -19,9 +19,18 @@
         "label_1": "SHOP MOST POPULAR STYLES",
         "url_1": ""
       }
+    },
+    "featured_collection_Mftzt7": {
+      "type": "featured-collection",
+      "settings": {
+        "heading": "Featured Collection",
+        "sub_heading": "",
+        "collection": "leggings"
+      }
     }
   },
   "order": [
-    "image_banner"
+    "image_banner",
+    "featured_collection_Mftzt7"
   ]
 }
