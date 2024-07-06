@@ -18,16 +18,6 @@
             "text": "{{ product.vendor}}"
           }
         },
-        "title": {
-          "type": "title",
-          "settings": {
-          }
-        },
-        "sku": {
-          "type": "sku",
-          "settings": {
-          }
-        },
         "price": {
           "type": "price",
           "settings": {
@@ -38,17 +28,37 @@
           "settings": {
           }
         },
-        "buy_button": {
+        "title_nCPLGa": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "variants_U6wLAm": {
+          "type": "variants",
+          "settings": {
+            "variant_type": "pills"
+          }
+        },
+        "buy_buttons_jY4YTB": {
           "type": "buy_buttons",
           "settings": {
             "enable_dynamic_button": true
+          }
+        },
+        "sku_nKpKij": {
+          "type": "sku",
+          "settings": {
           }
         }
       },
       "block_order": [
         "vendor",
         "price",
-        "quantity_selector"
+        "quantity_selector",
+        "title_nCPLGa",
+        "variants_U6wLAm",
+        "buy_buttons_jY4YTB",
+        "sku_nKpKij"
       ],
       "settings": {
       }
