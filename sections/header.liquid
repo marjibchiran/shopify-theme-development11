@@ -1,57 +1,85 @@
 <div class="header-section">
-    <nav class="navbar navbar-expand-lg bg-white py-0">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="{{ shop.url }}">
-            {% if settings.logo != blank %}
-              <img src="{{settings.logo | img_url}}" width="100px" height="auto" alt="{{ shop.name }} Logo">
-            {% else %}
-              {{ shop.name }}
-            {% endif %}
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="{{ shop.url }}">
+                {% if settings.logo != blank %}
+                    <img src="{{ settings.logo | img_url:'small' }}" width="auto" height="auto">
+                {% else %}
+                    {{ shop.name }}
+                {% endif  %}
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-lg-0">
-              {% for link in section.settings.menu.links %}
-              <li class="nav-item {% if link.links.size > 0 %}dropdown{% endif %}">
-                <a class="nav-link {% if link.links.size > 0 %}dropdown-toggle{% endif %}" href="{{ link.url }}" {% if link.links.size > 0 %}role="button" data-bs-toggle="dropdown" aria-expanded="false"{% endif %}>
-                  {{ link.title }}
-                </a>
-                {% if link.links.size > 0 %}
-                <ul class="dropdown-menu">
-                  {% for child in link.links %}
-                  <li><a class="dropdown-item" href="{{ child.url }}">{{ child.title }}</a></li>
-                  {% endfor %}
-                </ul>
-                {% endif %}
-              </li>
-              {% endfor %}
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                {% for link in section.settings.menu.links %}
+                <li class="nav-item{% if link.links.size > 0 %} dropdown{% endif %}">
+                    <a class="nav-link{% if link.links.size > 0 %} dropdown-toggle{% endif %}" aria-current="page" href="{{ link.url }}"{% if link.links.size > 0 %} data-bs-toggle="dropdown" aria-expanded="false"{% endif %}>{{ link.title }}</a>
+                        {% if link.links.size > 0 %}
+                            <ul class="dropdown-menu">
+                                {% for child in link.links %}
+                                    <li><a class="dropdown-item" href="{{ child.url }}">{{ child.title }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                </li>
+                {% endfor %}
             </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>         
+            <span class="my-2 mx-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                </svg>
+            </span>         
             <div class="header-cart-count mx-2">
-                <a href="{% if settings.cart_type == 'drawer' %} #offcanvasRight {% else %} {{ routes.cart_url }} {% endif %}" class="cart-link"{% if settings.cart_type == 'drawer' %} type="button" data-bs-toggle="offcanvas"  aria-controls="offcanvasRight" {% endif %}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
-              </svg>
-                  <span id="cartCounter">
-                    ({{ cart.item_count }})
-                  </span>
-              </a>
+                <a href="{% if settings.cart_type == 'drawer' %}#offcanvasRight{% else %}{{ routes.cart_url }}{% endif %}" class="cart_link"{% if settings.cart_type == 'drawer' %} type="button" data-bs-toggle="offcanvas" aria-controls="offcanvasRight"{% endif %}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                    <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+                    </svg>
+                    {% if cart.item_count > 0 %}
+                    <span id="cartCounter">
+                        ({{ cart.item_count }})
+                    </span>
+                    {% endif %}
+                </a>
             </div>
-            
-          </div>
+            </div>
         </div>
-      </nav>
+    </nav>
+</div>
+
+{% comment %} Searchbox {% endcomment %}
+<div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+  <div class="offcanvas-body">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <predictive-search>
+                <form action="{{ routes.search_url }}" method="get" role="search">
+                    <div class="form-field d-flex align-items-center">
+                        <input type="search"
+                            name="q"
+                            id="Search"
+                            value="{{ search.terms | escape }}"
+                            area-expanded="false"
+                            area-owns="predictive-search-results"
+                            area-controls="predictive-search-results"
+                            placeholder="Search"
+                            class="form-control">
+                        <button type="button" class="btn-close text-reset mx-2" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <input type="hidden" name="options[prefix]" value="last">
+                </form>
+                <div id="predictive-search" tabindex="-1"></div>
+            </predictive-search>
+        </div>
+        
+    </div>
+  </div>
 </div>
 
 {% schema %}
 {
-    "name": "header",
+    "name": "Header",
     "settings": [
         {
             "type": "link_list",
