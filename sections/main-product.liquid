@@ -1,5 +1,6 @@
 {{ 'product-template.css' | asset_url | stylesheet_tag }}
 {{ 'product-variant.js' | asset_url | script_tag }}
+{{ 'product-form.js' | asset_url | script_tag }}
 
 <div class="product-template-{{ section.id }}">
     <div class="main-product">
@@ -47,7 +48,7 @@
                                         {% assign variant_type = block.settings.variant_type %}
                                         {% render 'variants', product: product, variant_type: variant_type %}
                                     {% when 'buy_buttons' %}
-                                        <div class="cart_button my-4">
+                                        <div class="cart_button my-4" {{ block.shopify_attributes }}>
                                             <button type="submit" class="btn btn-custom w-100 mb-2" name="add">Add to Cart</button>
                                             {% if block.settings.enable_dynamic_button %}
                                                 {{ form | payment_button }}
