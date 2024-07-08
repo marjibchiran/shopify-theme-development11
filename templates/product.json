@@ -18,11 +18,6 @@
             "text": "{{ product.vendor}}"
           }
         },
-        "price": {
-          "type": "price",
-          "settings": {
-          }
-        },
         "quantity_selector": {
           "type": "quantity",
           "settings": {
@@ -39,6 +34,11 @@
             "variant_type": "pills"
           }
         },
+        "price": {
+          "type": "price",
+          "settings": {
+          }
+        },
         "buy_buttons_cYqarA": {
           "type": "buy_buttons",
           "settings": {
@@ -53,10 +53,10 @@
       },
       "block_order": [
         "vendor",
-        "price",
         "quantity_selector",
         "title_CFePLh",
         "variants_LmbCTz",
+        "price",
         "buy_buttons_cYqarA",
         "description_hGqYCP"
       ],
