@@ -32,7 +32,9 @@
             if (storedData == null) {
                 localStorage.setItem()
             }else{
-
+                const oldProductData = localStorage.getItem('recently_viewed');
+                const storeProductCount = (oldProductData.match(/productId/g) || []).length
+                console.log(storeProductCount);
             }
         }
         updateRecentlyViewedProducts();
