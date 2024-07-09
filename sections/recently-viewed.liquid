@@ -25,16 +25,27 @@
             }
 
             const productArray = [currentProductData];
-            const maxProduct = 4;
+            const maxProducts = 4;
             const currentProductId = currentProductData.productId;
             const productArrayString = JSON.stringify(productArray);
             const storedData = localStorage.getItem('recently_viewed');
             if (storedData == null) {
-                localStorage.setItem()
+                localStorage.setItem('recently_viewed',productArrayString);
             }else{
                 const oldProductData = localStorage.getItem('recently_viewed');
-                const storeProductCount = (oldProductData.match(/productId/g) || []).length
-                console.log(storeProductCount);
+                const storedProductCount = (oldProductData.match(/productId/g) || []).length
+                const revisitedProduct = oldProductData.includes(currentProductId);
+                if (storeProductCount < maxProducts && !revisitedProduct) {
+                    const parsedResponse = JSON.parse(oldProductData);
+                    const updatedProductArray = parsedResponse.concat(productArray);
+                    localStorage.setItem('recently_viewed', JSON.stringify(updatedProductArray));
+
+                }else if (storedProductCount >= maxProducts && !revisitedProduct) {
+                    const parsedResponse = JSON.parse(oldProductData);
+                    parsedResponse.shift();
+                    const updatedProductArray = parsedResponse.concat(productArray);
+                    localStorage.setItem('recently_viewed');
+                }
             }
         }
         updateRecentlyViewedProducts();
