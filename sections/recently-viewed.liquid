@@ -1,14 +1,41 @@
 <div class="recently-viewed-products">
-    <div class="container">
-      <div class="section-heading">
+    <div class="section-heading">
             <h2>Recently Viewed Product</h2>
-    </div> 
+    </div>
+    <div class="container">
     <div class="row" id="recentlyViewedProducts">
 
     </div>    
     </div>
 </div>
 
+
+<script>
+
+    $(document).ready(function(){
+        function updateRecentlyViewedProducts(){
+            const currentProductData = {
+                productId: "{{ product.id }}",
+                title: "{{ product.title }}",
+                image: "{{ product.featured_image | img_url: 'medium' }}",
+                price: "{{ product.price |  money }}",
+                url: "{{ product.url }}"
+
+            }
+
+            const productArray = [currentProductData];
+            const maxProduct = 4;
+            const currentProductId = currentProductData.productId;
+            const productArrayString = JSON.stringify(productArray);
+            const storedData = localStorage.getItem('recently_viewed');
+            if (storedData == null) {
+                localStorage.setItem()
+            }else{
+
+            }
+        }
+    })
+</script>
 
 {% schema %}
 {
