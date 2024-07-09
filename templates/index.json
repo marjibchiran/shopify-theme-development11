@@ -70,11 +70,17 @@
         "heading": "Multicolumn title",
         "sub_heading": ""
       }
+    },
+    "recently_viewed_D9HcxR": {
+      "type": "recently-viewed",
+      "settings": {
+      }
     }
   },
   "order": [
     "image_banner",
     "featured_collection_Mftzt7",
-    "multicolumn_eJVKDd"
+    "multicolumn_eJVKDd",
+    "recently_viewed_D9HcxR"
   ]
 }
