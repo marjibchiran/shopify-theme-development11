@@ -10,7 +10,6 @@
     </div>
 </div>
 
-
 <script>
 
     $(document).ready(function(){
@@ -44,7 +43,7 @@
                     const parsedResponse = JSON.parse(oldProductData);
                     parsedResponse.shift();
                     const updatedProductArray = parsedResponse.concat(productArray);
-                    localStorage.setItem('recently_viewed');
+                    localStorage.setItem('recently_viewed', JSON.stringify(updatedProductArray));
                 }
             }
         }
