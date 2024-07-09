@@ -10,6 +10,7 @@
     </div>
 </div>
 
+
 <script>
 
     $(document).ready(function(){
@@ -34,7 +35,7 @@
                 const oldProductData = localStorage.getItem('recently_viewed');
                 const storedProductCount = (oldProductData.match(/productId/g) || []).length
                 const revisitedProduct = oldProductData.includes(currentProductId);
-                if (storeProductCount < maxProducts && !revisitedProduct) {
+                if (storedProductCount < maxProducts && !revisitedProduct) {
                     const parsedResponse = JSON.parse(oldProductData);
                     const updatedProductArray = parsedResponse.concat(productArray);
                     localStorage.setItem('recently_viewed', JSON.stringify(updatedProductArray));
