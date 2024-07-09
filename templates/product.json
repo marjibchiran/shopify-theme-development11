@@ -68,10 +68,16 @@
       "settings": {
         "limit": 4
       }
+    },
+    "recently_viewed_CcHxWy": {
+      "type": "recently-viewed",
+      "settings": {
+      }
     }
   },
   "order": [
     "main-product",
-    "recommended-product"
+    "recommended-product",
+    "recently_viewed_CcHxWy"
   ]
 }
