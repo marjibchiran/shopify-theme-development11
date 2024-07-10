@@ -49,6 +49,13 @@
             }
         }
         updateRecentlyViewedProducts();
+        function displayRecentViewedProducts(){
+            const storedProductData = JSON.parse(localStorage.getItem('recently_viewed'));
+            const recentProductHtml = [];
+            storedProductData.forEach(function(product) {
+                recentProductHtml.push('')
+            });
+        }
     })
 </script>
 
