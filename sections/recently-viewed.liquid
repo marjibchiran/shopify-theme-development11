@@ -53,7 +53,20 @@
             const storedProductData = JSON.parse(localStorage.getItem('recently_viewed'));
             const recentProductHtml = [];
             storedProductData.forEach(function(product) {
-                recentProductHtml.push('')
+                recentProductHtml.push(' <div class="col-md-3">
+                    <div class="card my-2">
+                        <div class="card-body">
+                            <img src="${product.image}" alt="${product.title}" width="300" height="533">
+                            <div class="product-info">
+                                <p><strong>${product.title}</strong></p>
+                                <p>Price: ${product.price}</p>
+                                <div class="CTA">
+                                    <a href="${product.url}" class="btn btn-secondary w-100">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> ')
             });
         }
     })
