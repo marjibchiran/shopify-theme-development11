@@ -14,7 +14,7 @@
                                 {% case filter.type %}
                                     {% when 'boolean' %}
                                         <ul class="list-inline">
-                                            <li class="list-inline-item">
+                                            <li class="list-item">
                                                 <label for="filter-{{ filter.param_name }}-{{ filter.true_value.value }}">
                                                     <input type="checkbox"
                                                     name="{{ filter.param_name }}"
@@ -25,7 +25,7 @@
                                                     {{ filter.true_value.label }}
                                                 </label>
                                             </li>
-                                            <li class="list-inline-item">
+                                            <li class="list-item">
                                                 <label for="filter-{{ filter.param_name }}-{{ filter.false_value.value }}">
                                                     <input type="checkbox"
                                                     name="{{ filter.param_name }}"
@@ -40,7 +40,7 @@
                                     {% when 'list' %}
                                         <ul class="list-inline">
                                             {% for filter_value in filter.values %}
-                                                <li class="list-inline-item">
+                                                <li class="list-item">
                                                     <label for="filter-{{ filter.param_name }}--{{ forloop.index }}">
                                                         <input type="checkbox"
                                                         name="{{ filter_value.param_name }}" 
