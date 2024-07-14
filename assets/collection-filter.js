@@ -9,7 +9,7 @@ $(document).ready(function(){
         }
     })
   }
-  $('#sort_by').on("change", function(){
+  $('#sort-by').on("change", function(){
     var value = $(this).val();
     Shopify.queryParams.sort_by = value;
     location.search = $.param(Shopify.queryParams);
