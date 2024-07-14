@@ -53,7 +53,21 @@
                                                 </li>
                                             {% endfor %}
                                         </ul>
-                                    {% else %}
+                                    {% when 'price_range' %}
+                                        <div class="filter-group-display_price-range">
+                                           <div class="filter-group_display_price-range-from ">
+                                            <span>{{ cart.currency.symbol }}</span>
+                                            <input type="number"
+                                            name="{{ filter.min_value.param_name }}"
+                                            id="filter-{{ filter.min_value.param_name }}"
+                                            {% if filter.min_value.value %} value="{{ filter.min_value.value |  money_without_currency | replace: ",", '' }}"{% endif %}
+                                                placeholder="0"
+                                                min="0"
+                                                max="{{ filter.range_max |  money_without_currency | replace: ",", '' }}">
+
+                                           </div>        
+                                        </div>
+                                            
                                 {% endcase %}
                             </div>
                         {% endfor %}
