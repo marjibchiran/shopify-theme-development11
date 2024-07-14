@@ -5,7 +5,15 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3">
-                <h2>Sidebar Filtering</h2>
+            <form id="collection-filter-form">
+                {% for filter in collection.filters %}
+                    <div class="filter-area">
+                    <p class="filter-labe">
+                        <strong>{{ filter.label }}</strong>
+                    </p>
+                    </div>
+                {% endfor %}
+            </form>
             </div>
             <div class="col-md-9">
                 <div class="row row justify-content-between">
