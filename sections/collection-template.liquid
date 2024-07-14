@@ -13,8 +13,8 @@
                     </p>
                     {% case filter.type %}
                         {% when 'boolean' %}
-                            <ul>
-                                <li>
+                            <ul class="list">
+                                <li class="list-item">
                                     <label for="filter-{{ filter.param_name }}-{{ filter.true_value.value }}">
                                         <input type="checkbox"
                                         name="{{ filter.param_name }}"
