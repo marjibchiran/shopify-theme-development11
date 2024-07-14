@@ -56,7 +56,7 @@
                                     {% when 'price_range' %}
                                         <div class="filter-group-display_price-range">
                                            <div class="filter-group_display_price-range-from ">
-                                             <label for="filter-{{ filter.min_value.param_name }}">
+                                            <label for="filter-{{ filter.min_value.param_name }}">
                                                    From 
                                                 </label>
                                             <span>{{ cart.currency.symbol }}</span>
@@ -67,9 +67,21 @@
                                                 placeholder="0"
                                                 min="0"
                                                 max="{{ filter.range_max |  money_without_currency | replace: ",", '' }}">
-                                             
-
-                                           </div>        
+                                           </div> 
+                                           
+                                           <div class="filter-group-display_price-range-to">
+                                            <label for="filter-{{ filter.max_value.param_name }}">To</label>
+                                            <span>{{ cart.currency.symbol }}</span>
+                                            <input type="number"
+                                            name="{{ filter.max_value.param_name  }}"
+                                            id="filter-{{filter.max_value.param_name}}"
+                                            {% if filter.max_value.value %}
+                                                value="{{ filter.max_value.value |  money_without_currency | replace: ",", '' }}"
+                                            {% endif %}
+                                            placeholder="{{ filter.range_max | money_without_currency | replace: ",", '' }}"
+                                            min="0"
+                                            max="{{ filter.range_max | money_without_currency | replace: ",", '' }}">
+                                           </div>
                                         </div>
                                             
                                 {% endcase %}
