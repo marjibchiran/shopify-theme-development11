@@ -8,9 +8,57 @@
             <form id="collection-filter-form">
                 {% for filter in collection.filters %}
                     <div class="filter-area">
-                    <p class="filter-labe">
+                    <p class="filter-label">
                         <strong>{{ filter.label }}</strong>
                     </p>
+                    {% case filter.type %}
+                        {% when 'boolean' %}
+                            <ul>
+                                <li>
+                                    <label for="filter-{{ filter.param_name }}-{{ filter.true_value.value }}">
+                                        <input type="checkbox"
+                                        name="{{ filter.param_name }}"
+                                        value="{{ filter.true_value.value }}"
+                                        id="filter-{{ filter.param_name }}-{{ filter.true_value.value }}"
+                                        {% if filter.true_value.active %}checked{% endif %}
+                                        {% if filter.true_value.count == 0 and filter.true_value.active == false %}disabled{% endif %}    
+                                        >
+                                        {{ filter.true_value.label }}
+                                    </label>
+                                </li>
+                                <li>
+                                    <label for="filter-{{ filter.param_name }}-{{ filter.false_value.value }}">
+                                        <input type="checkbox"
+                                        name="{{ filter.param_name }}"
+                                        value="{{ filter.false_value.value }}"
+                                        id="filter-{{ filter.param_name }}-{{ filter.false_value.value }}"
+                                        {% if filter.false_value.active %}checked{% endif %}
+                                        {% if filter.false_value.count == 0 and filter.false_value.active == false %}disabled{% endif %}    
+                                        >
+                                        {{ filter.false_value.label }}
+                                    </label>
+                                </li>
+                            </ul>
+
+                        {% when 'list' %}
+                            <ul>
+                            {% for filter_value in filter.values %}
+                                <li>
+                                    <label for="filter-{{ filter.param_name }}--{{ forloop.index }}">
+                                        <input type="checkbox"
+                                           name="{{ filter_value.param_name }}" 
+                                           value="{{ filter_value.value }}"
+                                           id="filter-{{ filter.param_name }}--{{ forloop.index }}"
+                                           {% if filter_value.active %}checked{% endif %}
+                                           {% if filter_value.count == 0 and filter_value.active == false %}disabled{% endif %}>
+                                        {{ filter_value.label }}
+                                    </label>
+                                </li>
+                            {% endfor %}
+                            </ul> 
+                        {% else %}
+                            
+                    {% endcase %}
                     </div>
                 {% endfor %}
             </form>
@@ -23,11 +71,11 @@
                     <div class="col text-right">
                         <div class="product-sorting text-end">
                             <select id="sort-by">
-                                {% assign sort_by = collection.sort_by | default: collection.default_sort_by  %}
+                                {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
                                 {% for option in collection.sort_options %}
-                                    <option value="{{ option.value }}" {% if option.value == sort_by %}selected="selected"
-                                        
-                                    {% endif %}>{{ option.name }}</option>
+                                    <option value="{{ option.value }}" {% if option.value == sort_by %}selected="selected"{% endif %}>
+                                        {{ option.name }}
+                                    </option>
                                 {% endfor %}
                             </select>
                         </div>
