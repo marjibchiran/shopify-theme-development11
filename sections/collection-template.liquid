@@ -7,7 +7,21 @@
             </div>
             <div class="col-md-9">
                 <div class="row row justify-content-between">
-                    <p>Products: {{ collection.products_count }}</p>
+                    <div class="col">
+                        <p>Products: {{ collection.products_count }}</p>
+                    </div>
+                    <div class="col text-right">
+                        <div class="product-sorting">
+                            <select id="sort-by">
+                                {% assign sort_by = collection.sort_by | default: collection.default_sort_by  %}
+                                {% for option in collection.sort_options %}
+                                    <option value="{{ option.value }}" {% if option.value == sort_by %}selected="selected"
+                                        
+                                    {% endif %}>{{ option.name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
                 </div>
                 <div class="collection-product">
                     <div class="row">
