@@ -34,6 +34,10 @@ $(document).ready(function() {
       .catch((error) => {
         console.log(error);
       });
+
+      var baseUrl = window.location.pathname;
+      var queryUrl = baseUrl + '?' + query
+      window.history.pushState({path: queryUrl}, '', queryUrl)
   }
 
   // Event delegation for dynamically added elements
