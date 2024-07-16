@@ -18,7 +18,7 @@ $(document).ready(function(){
   
   //collection filtering
   function updateCollection(){
-    var queryString = $("collection-filter-form").serialize();
+    var queryString = $("#collection-filter-form").serialize();
   }
   function updateSection(query){
     fetch("?section_id=collection-template&"+query)
