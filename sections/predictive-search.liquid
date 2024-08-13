@@ -1,4 +1,4 @@
-{% if predictive-search.performed %}
+{% if predictive_search.performed %}
     <div id="predictive-search-results">
         {% if predictive_search.resources.products.size > 0 %}
             <h3 id="predictive-search-products">Products</h3>
@@ -12,6 +12,7 @@
                     </li>
                 {% endfor %}
             </ul>
+      
         {% endif %}
 
         <button class="btn btn-success btn-sm">
