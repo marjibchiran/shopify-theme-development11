@@ -29,10 +29,10 @@ html{
 }
 /* Predictive Search*/
 #predictive-search {
-    width:800px;
+    width: 900px;
     position: absolute;
     padding: 20px;
-    background: white;
+    background: #fff;
 }
 
 /* Multicolumn Section*/
