@@ -29,6 +29,7 @@ html{
 }
 /* Predictive Search*/
 #predictive-search {
+    width:800px;
     position: absolute;
     padding: 20px;
     background: white;
