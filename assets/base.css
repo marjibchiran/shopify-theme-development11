@@ -28,8 +28,10 @@ html{
         height: auto;
 }
 /* Predictive Search*/
-#predictive-search{
-    padding:20px;
+#predictive-search {
+    position: absolute;
+    padding: 20px;
+    background: white;
 }
 
 /* Multicolumn Section*/
