@@ -1,23 +1,41 @@
-{% if predictive_search.performed %}
-    <div id="predictive-search-results">
-        {% if predictive_search.resources.products.size > 0 %}
-            <h3 id="predictive-search-products">Products</h3>
-            <ul>
-                {% for product in predictive_search.resources.products %}
-                    <li>
-                        <a href="{{ product.url }}">
-                            {{ product |  image_url: width:50 |  image_tag  }}
-                            <span class="mx-2">{{ product.title }}</span>
-                        </a>
-                    </li>
-                {% endfor %}
-            </ul>
-      
-        {% endif %}
+<div id="predictiveSearchSection">
+    {% if predictive_search.performed %}
+        <div id="predictive-search-results">
+            {% if predictive_search.resources.products.size > 0 %}
+                <h3 id="predictive-search-products">Products</h3>
+                <ul>
+                    {% for product in predictive_search.resources.products %}
+                        <li>
+                            <a href="{{ product.url }}">
+                                {{ product |  image_url: width:50 |  image_tag  }}
+                                <span class="mx-2">{{ product.title }}</span>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                    <p>No Result Found</p>
+            {% endif %}
+    
+            {% if predictive_search.resources.articles.size > 0 or predictive_search.resources.pages.size > 0 %}
+                
+                <h3 id="predictive-search-pages">Pages and Articles</h3>
+                <ul>
+                    {% for article in predictive_search.resources.articles %}
+                        <li>
+                            <a href="{{ article.url }}">
+                                <span class="mx-2">{{ article.title }}</span>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul> 
+    
+            {% endif %}
+            <hr>
+            <button class="btn btn-success btn-sm">
+                Search for "{{ predictive_search.terms }}"
+            </button>
+        </div>
+    {% endif %}
+</div>
 
-        <button class="btn btn-success btn-sm">
-            Search for "{{ predictive_search.terms }}"
-        </button>
-    </div>
-
-{% endif %}
