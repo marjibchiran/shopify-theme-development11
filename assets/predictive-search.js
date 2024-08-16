@@ -5,7 +5,7 @@ class PredictiveSearch extends HTMLElement {
         this.$predictiveSearchResults = $(this).find('#predictiveSearchSection');
         this.$input.on('input', this.debounce((event) => {
             this.onChange(event);
-        }, 500));
+        }, 300));
     }
 
     onChange(){
