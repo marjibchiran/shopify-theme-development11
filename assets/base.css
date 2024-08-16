@@ -27,6 +27,11 @@ html{
         width: 100%;
         height: auto;
 }
+
+#predictive-search{
+    padding:20px;
+}
+
 /* Multicolumn Section*/
 svg.placeholder-svg {
     width: 100%;
