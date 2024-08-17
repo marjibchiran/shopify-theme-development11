@@ -19,6 +19,15 @@
                     {% case item.object_type %}
                         {% when 'product' %}
                             {% render 'card-product', product: item %}
+                          
+                        {% when 'article' %}
+                            <div class="article">
+                                <a href="{{ item.url }}"> {{ item.title }}</a>
+                            </div>
+                         {% when 'page' %}
+                            <div class="page">
+                                <a href="{{ item.url }}"> {{ item.title }}</a>
+                            </div>
                         {% else %}
                             
                     {% endcase %}
