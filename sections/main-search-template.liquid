@@ -21,11 +21,11 @@
                             {% render 'card-product', product: item %}
                           
                         {% when 'article' %}
-                            <div class="article">
+                            <div class="article col-md-3">
                                 <a href="{{ item.url }}"> {{ item.title }}</a>
                             </div>
                          {% when 'page' %}
-                            <div class="page">
+                            <div class="page col-md-3">
                                 <a href="{{ item.url }}"> {{ item.title }}</a>
                             </div>
                         {% else %}
