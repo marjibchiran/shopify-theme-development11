@@ -13,5 +13,21 @@
                 </div>
             </div>
         </div>
+        {% if search.results.size > 0 %}
+            <div class="main-results">
+                {% for item in search.results %}
+                    {% case item.object_type %}
+                        {% when 'product' %}
+                            {% render 'card-product', product: item %}
+                        {% else %}
+                            
+                    {% endcase %}
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="text-center">
+                <p>No result found</p>
+            </div>
+        {% endif %}
     </div>
 </div>
