@@ -35,6 +35,9 @@ html{
     background: #fff;
 }
 
+.search-from-header{
+  padding-top:50px;
+}
 /* Multicolumn Section*/
 svg.placeholder-svg {
     width: 100%;
