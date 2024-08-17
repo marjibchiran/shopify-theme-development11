@@ -4,8 +4,8 @@
             <div class="row justify-content-center">
                 <div class="col-md-6">
                     <form action="{{ routes.search_url }}" method="get" role="search">
-                        <div class="d-flex mx-2">
-                            <input class="form-control" type="search" name="q" id="searchBox" value="{{ search.terms |  escape }}" placeholder="Search">
+                        <div class="d-flex">
+                            <input class="form-control mx-2" type="search" name="q" id="searchBox" value="{{ search.terms |  escape }}" placeholder="Search">
                             <input type="hidden" name="options[prefix]" class="hidden" value="last">
                             <button type="submit" class="btn btn-success btn-sm"> Search</button>
                         </div>
