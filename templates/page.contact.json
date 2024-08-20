@@ -9,13 +9,13 @@
 */
 {
   "sections": {
-    "main-page": {
-      "type": "main-page-template",
+    "main-contact": {
+      "type": "contact-page",
       "settings": {
       }
     }
   },
   "order": [
-    "main-page"
+    "main-contact"
   ]
 }
