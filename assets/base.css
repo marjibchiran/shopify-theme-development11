@@ -42,13 +42,6 @@ svg.placeholder-svg {
 }
 
 
-@media screen and (min-width:768px) {
-    .image-banner-main img{
-        width: 100%;
-        height: auto;
-    }
-}
-
 /* Featured Slider css start here  */
 body {
   overflow-x: hidden;
@@ -60,19 +53,21 @@ img {
 
 .section__wrapper {
   width: 100vw;
-  font-family: poppins;
+  font-family: Poppins, sans-serif;
   padding: 40px 0px;
 }
 
 .slider__contents__wrapper {
   padding: 10px 20px;
 }
+
 .slider__title__content {
   padding: 10px 0;
 }
+
 .slider__title {
   font-size: 42px;
-  font-family: poppins;
+  font-family: Poppins, sans-serif;
 }
 
 .single__slide {
@@ -86,18 +81,19 @@ img {
   width: 100%;
 }
 
-.slide___reviews {
+.slide__reviews {
   padding: 10px 20px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
 
-.slide___reviews i {
+.slide__reviews i {
   font-size: 22px;
   color: gold;
 }
-.slide___reviews span {
+
+.slide__reviews span {
   font-size: 16px;
   margin-left: 10px;
 }
@@ -138,3 +134,12 @@ img {
 }
 
 /* Featured Slider css end here  */
+
+
+@media screen and (min-width:768px) {
+    .image-banner-main img{
+        width: 100%;
+        height: auto;
+    }
+}
+
