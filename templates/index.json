@@ -79,6 +79,15 @@
     "custom_product_slider_featured_GCEAzL": {
       "type": "custom-product-slider-featured",
       "settings": {
+        "heading": "Featured Products",
+        "products": [
+          "high-rise-compression-leggings",
+          "heather-spacedye-high-rise-full-length-pocket-leggings",
+          "heather-spacedye-high-rise-full-length-pocket-leggings-copy",
+          "heather-spacedye-high-rise-full-length-pocket-leggings-copy-3",
+          "high-rise-compression-full-length-pocket-leggings",
+          "high-rise-compression-full-length-pocket-leggings-copy"
+        ]
       }
     }
   },
