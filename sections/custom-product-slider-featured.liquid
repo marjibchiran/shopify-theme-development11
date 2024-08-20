@@ -9,7 +9,6 @@
         <div class="main__slider">
 
 {% for product in section.settings.products %}
-            <!-- Single Slide start here -->
             <div class="single__slide">
                 <div class="slide__contents">
                     <img src="{{ product.featured_image | image_url }}" alt="{{ product.title }}">
@@ -29,7 +28,6 @@
                     <p class="slider__price">{{ product.price | money }}</p>
                 </div>
             </div>
-            <!-- Single Slide end here -->
 {% endfor %}
 
         </div>
