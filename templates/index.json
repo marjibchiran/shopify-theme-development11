@@ -75,12 +75,18 @@
       "type": "recently-viewed",
       "settings": {
       }
+    },
+    "custom_product_slider_featured_GCEAzL": {
+      "type": "custom-product-slider-featured",
+      "settings": {
+      }
     }
   },
   "order": [
     "image_banner",
     "featured_collection_Mftzt7",
     "multicolumn_eJVKDd",
-    "recently_viewed_D9HcxR"
+    "recently_viewed_D9HcxR",
+    "custom_product_slider_featured_GCEAzL"
   ]
 }
