@@ -34,10 +34,7 @@ html{
     padding: 20px;
     background: #fff;
 }
-/* Search Template*/
-.search-from-header{
-  padding-top:50px;
-}
+
 /* Multicolumn Section*/
 svg.placeholder-svg {
     width: 100%;
@@ -51,3 +48,93 @@ svg.placeholder-svg {
         height: auto;
     }
 }
+
+/* Featured Slider css start here  */
+body {
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+.section__wrapper {
+  width: 100vw;
+  font-family: poppins;
+  padding: 40px 0px;
+}
+
+.slider__contents__wrapper {
+  padding: 10px 20px;
+}
+.slider__title__content {
+  padding: 10px 0;
+}
+.slider__title {
+  font-size: 42px;
+  font-family: poppins;
+}
+
+.single__slide {
+  box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.2);
+  margin: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.slide__contents img {
+  width: 100%;
+}
+
+.slide___reviews {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.slide___reviews i {
+  font-size: 22px;
+  color: gold;
+}
+.slide___reviews span {
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.slide__info {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.slide__info .slide__title {
+  font-size: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+.slide__info .slider__price {
+  font-size: 20px;
+  color: black;
+  font-weight: 600;
+}
+
+.main__slider ul.slick-dots {
+  position: absolute;
+  width: 250px;
+  left: 50%;
+  transform: translate(-50%, 0px);
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  bottom: -40px;
+  padding-bottom: 5px;
+}
+
+.slick-dots li button:before {
+  font-size: 10px;
+}
+
+/* Featured Slider css end here  */
