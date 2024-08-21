@@ -6,7 +6,7 @@
         {% if section.settings.image != blank %}
 
             <div class="404-image">
-                {{ section.settings.image | image_url: width: 600 |  image_tag }}
+                {{ section.settings.image | image_url: width: 800 |  image_tag }}
                 <div class="page-action">
                     <a href="{{ section.settings.action_url |  default: '/collections/all' }}" class="btn btn-success my-2">{{ section.settings.action_label }}</a>
                 </div>
