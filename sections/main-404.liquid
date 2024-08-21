@@ -1,9 +1,16 @@
 <div class="main-404-template">
     <div class="container">
-        <div class="main-content text-center my-5">
-        {% if section.settings.image != blank %}
+        <div class="main-content text-center">
 
-            {{ section.settings.image | image_url: width: 600 |  image_tag }}
+
+        {% if sections.settings.image != blank %}
+
+            <div class="404-image">
+                {{ section.settings.image | image_url: width: 400 |  image_tag }}
+                <div class="page-action">
+                    <a href="{{ section.settings.action_url |  default: '/collections/all' }}">{{ section.settings.action_label }}</a>
+                </div>
+            </div>
             {% else %}
             <h1 class="heading">Page Not Found</h1>
             <div class="action my-5">
@@ -13,6 +20,8 @@
         </div>
     </div>
 </div>
+
+
 {% schema %}
 {
     "name": "404 Template",
@@ -21,6 +30,18 @@
                 "type": "image_picker",
                 "id": "image",
                 "label": "Image"
+            },
+            {
+                "type": "url",
+                "id": "action_url",
+                "label": "Url"
+
+            },
+            {
+                "type": "text",
+                "id": "action_label",
+                "label": "Label" ,
+                "default": "Go Back"               
             }
         ]
 }
