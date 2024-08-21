@@ -3,7 +3,7 @@
         <div class="main-content text-center">
 
 
-        {% if sections.settings.image != blank %}
+        {% if section.settings.image != blank %}
 
             {{ section.settings.image | image_url: width: 300 |  image_tag }}
             {% else %}
