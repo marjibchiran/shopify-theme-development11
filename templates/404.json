@@ -12,6 +12,7 @@
     "main": {
       "type": "main-404",
       "settings": {
+        "image": "shopify:\/\/shop_images\/ops.png"
       }
     }
   },
