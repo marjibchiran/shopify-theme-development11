@@ -1,10 +1,31 @@
 <div class="main-404-template">
     <div class="container">
         <div class="main-content text-center">
+
+
+        {% if sections.settings.image != blank %}
+
+            {{ section.settings.image | image_url: width: 400 |  image_tag }}
+            {% else %}
             <h1 class="heading">Page Not Found</h1>
             <div class="action my-5">
                 <a href="/collections/all" class="btn btn-success">Browse More</a>
-            </div>
+            </div>   
+        {% endif %}
         </div>
     </div>
 </div>
+
+
+{% schema %}
+{
+    "name": "404 Template",
+    "settings": [
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Image"
+            }
+        ]
+}
+{% endschema %}
