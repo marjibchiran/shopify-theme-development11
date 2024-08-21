@@ -1,8 +1,6 @@
 <div class="main-404-template">
     <div class="container">
         <div class="main-content text-center my-5">
-
-
         {% if section.settings.image != blank %}
 
             {{ section.settings.image | image_url: width: 600 |  image_tag }}
@@ -15,8 +13,6 @@
         </div>
     </div>
 </div>
-
-
 {% schema %}
 {
     "name": "404 Template",
