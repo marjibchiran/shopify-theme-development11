@@ -5,7 +5,7 @@
 
         {% if sections.settings.image != blank %}
 
-            {{ section.settings.image | image_url: width: 400 |  image_tag }}
+            {{ section.settings.image | image_url |  image_tag }}
             {% else %}
             <h1 class="heading">Page Not Found</h1>
             <div class="action my-5">
