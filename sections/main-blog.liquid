@@ -13,7 +13,7 @@
                             {% endif %}
                         </div>
                         <div class="card-footer">
-                            <a href="{{ article.url }}">{{ article.title }}</a>
+                            <a href="{{ article.url }}">{{ article.title | truncate:15 |  escape}}</a>
                         </div>
                     </div>
                 </div>
