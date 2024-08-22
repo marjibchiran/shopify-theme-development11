@@ -17,7 +17,7 @@
                         </div>
                         <div class="card-footer">
                             <a href="{{ article.url }}">{{ article.title | truncate:30 |  escape}}</a>
-                            <span class="article-date"> {{ article.published_at |  time_tag: formate: 'date' }} </span>
+                            <span class="article-date"> {{ article.published_at |  time_tag: formate: 'month_day_year' }} </span>
                         </div>
                     </div>
                 </div>
