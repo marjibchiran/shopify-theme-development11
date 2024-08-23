@@ -1,1 +1,9 @@
-Hello Boss
+<div class="main-article-template">
+    <div class="container">
+        {% if article.image %}
+            <div class="article-img">
+                {{ article.image |  image_url: width: 1100 |  image_tag  }}
+            </div>
+        {% endif %}
+    </div>
+</div>
