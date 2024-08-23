@@ -12,6 +12,9 @@
     "main": {
       "type": "main-blog",
       "settings": {
+        "show_author": true,
+        "show_date": true,
+        "show_excerpt": true
       }
     }
   },
