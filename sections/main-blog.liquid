@@ -18,8 +18,13 @@
                         <div class="card-footer">
                             <a href="{{ article.url }}">{{ article.title | truncate:30 |  escape}}</a>
                             <div class="d-flex justify-content-between">
-                                <span class="col article-date"> {{ article.published_at |  time_tag: formate: 'abbreviated_date' }} </span>
-                                <span class="col author-name">{{ article.author }}</span>
+                                {% if section.settings.show_date %}
+                                    <span class="col article-date"> {{ article.published_at |  time_tag: formate: 'abbreviated_date' }} </span>
+                                {% endif %}
+                                
+                                {% if section.settings.show_author %}
+                                    <span class="col author-name">{{ article.author }}</span>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
@@ -28,3 +33,29 @@
         </div>
     </div>
 </div>
+
+{% schema %}
+{
+    "name": "Blog Template",
+    "settings": [
+            {
+                "type": "checkbox",
+                "id": "show_author",
+                "label": "Show Author",
+                "default": true
+            },
+            {
+                "type": "checkbox",
+                "id": "show_date",
+                "label": "Show Date",
+                "default": true
+            },
+            {
+                "type": "checkbox",
+                "id": "show_excerpt",
+                "label": "Show Excerpt",
+                "default": false
+            }
+        ]
+}
+{% endschema %}
