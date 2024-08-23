@@ -16,7 +16,7 @@
                             {% endif %}
                         </div>
                         <div class="card-footer">
-                            <a href="{{ article.url }}">{{ article.title | truncate:30 |  escape}}</a>
+                            <a href="{{ article.url }}" class="font-weight-bold">{{ article.title | truncate:30 |  escape}}</a>
                             <div class="d-flex justify-content-between">
                                 {% if section.settings.show_date %}
                                     <span class="col article-date"> {{ article.published_at |  time_tag: formate: 'abbreviated_date' }} </span>
