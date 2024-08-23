@@ -1,7 +1,7 @@
 <div class="main-article-template">
     <div class="container">
         {% if article.image %}
-            <div class="article-img">
+            <div class="article-img text-center">
                 {{ article.image |  image_url: width: 1100 |  image_tag  }}
             </div>
         {% endif %}
