@@ -6,6 +6,17 @@
             </div>
         {% endif %}
 
-      
+        <div class="article-heading">
+        <h1 class="heading">{{ article.title |  escape }}</h1>
+        </div>
+        <div class="article-info">
+            <span class="author-name">{{ article.author }}</span>
+            &bull;
+            <span class="article-publish-date">{{ article.published_at |  time_tag: formate: 'date' }}</span>
+        </div>
+        <hr/>
+        <div class="article-content">
+            {{ article.content }}
+        </div>
     </div>
 </div>
