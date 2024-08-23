@@ -26,6 +26,17 @@
                                     <span class="col author-name">{{ article.author }}</span>
                                 {% endif %}
                             </div>
+                            <div class="rte">
+                                {% if section.settings.show_excerpt %}
+                                    {% if article.excerpt.size > 0 or article.content.size > 0 %}
+                                        {% if article.excerpt.size > 0  %}
+                                            {{ article.excerpt | strip_html |  truncatewords: 20 }}
+                                            {% else %}
+                                            {{ article.content | strip_html |  truncatewords: 20 }}
+                                        {% endif %}
+                                    {% endif %}
+                                {% endif %}
+                            </div>
                         </div>
                     </div>
                 </div>
