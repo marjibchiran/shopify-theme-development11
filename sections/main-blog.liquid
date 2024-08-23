@@ -17,7 +17,9 @@
                         </div>
                         <div class="card-footer">
                             <a href="{{ article.url }}">{{ article.title | truncate:30 |  escape}}</a>
-                            <span class="article-date"> {{ article.published_at |  time_tag: formate: 'abbreviated_date' }} </span>
+                            <div class="d-flex justify-content-between">
+                                <span class="article-date"> {{ article.published_at |  time_tag: formate: 'abbreviated_date' }} </span>
+                            </div>
                         </div>
                     </div>
                 </div>
