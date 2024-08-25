@@ -19,7 +19,7 @@
             {{ article.content }}
         </div>
 
-        <div class="action-back text-center my-2">
+        <div class="action-back text-center my-3">
             <a href="{{ blog.url }}" class="btn btn-success"> Back To {{ blog.title }}</a>
         </div>
 
@@ -30,7 +30,7 @@
                     <div class="comment-area">
 
                     <article class="comment-article">
-                        <div class="author-info my-3">
+                        <div class="author-info">
                             <div class="d-flex author-details align-items-center">
                                 <div class="author-icon mx-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="32" fill="currentColor" class="bi bi-person-workspace" viewBox="0 0 16 16">
@@ -40,12 +40,14 @@
                                 </div>
 
                                 <div class="time-details">
-                                    <h4>{{ comment.author }}</h4>
+                                    <h5>{{ comment.author }}</h5>
                                     <span>{{ comment.created_at |  time_tag: format: 'date' }}</span>
                                 </div>
                             </div>
                         </div>
-                        {{ comment.content }}
+                        <div class="comment-box my-2">
+                            {{ comment.content }}
+                        </div>
                     </article>
                        
                     </div>
