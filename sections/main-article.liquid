@@ -25,6 +25,10 @@
 
         {% if blog.comments_enabled? %}
             {% if article.comments_count > 0 %}
+                <div class="comment-heading my-5">
+                <h3>Comments ({{ article.comments_count }})</h3>
+                </div>
+                <hr>
                {% for comment in article.comments %}
                 {% if article.status != 'pending' and comment.content %}
                     <div class="comment-area">
