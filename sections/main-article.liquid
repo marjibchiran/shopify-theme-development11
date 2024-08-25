@@ -6,19 +6,27 @@
             </div>
         {% endif %}
 
-        <div class="article-heading my-2">
+        <div class="article-heading mt-2">
         <h1 class="heading">{{ article.title |  escape }}</h1>
         </div>
         <div class="article-info">
-            <span class="author-name">Author: {{ article.author }}</span><br>
+            <span class="author-name">{{ article.author }} :</span><br>
+            &bull;
             <span class="article-publish-date">{{ article.published_at |  time_tag: formate: 'date' }}</span>
         </div>
         <hr/>
         <div class="article-content">
             {{ article.content }}
         </div>
-      <div class="action-back text-center my-3">
+
+        <div class="action-back text-center my-3">
             <a href="{{ blog.url }}" class="btn btn-success"> Back To {{ blog.title }}</a>
         </div>
+
+        {% if blog.comments_enabled? %}
+            {% if article.comments_count > 0 %}
+                Hellos
+            {% endif %}
+        {% endif %}
     </div>
 </div>
