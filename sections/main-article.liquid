@@ -59,6 +59,23 @@
                 {% endif %}
                {% endfor %}
             {% endif %}
+                                      
+            <div class="new-comment">
+                {% form 'new_comment', article %}
+                    <div class="form-row">
+                        <input type="text" name="comment[author]" id="" class="form-control" placeholder="Name">
+                    </div>
+                    <div class="form-row">
+                        <input type="email" name="comment[email]" id="" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="form-row">
+                        <textarea name="comment[body]" id="" cols="30" rows="10" class="form-control"></textarea>
+                    </div>
+                    <div class="action my-3">
+                       <button type="submit" class="btn btn-success">Post Comment</button>
+                    </div>
+                {% endform %}
+            </div>
         {% endif %}
     </div>
 </div>
