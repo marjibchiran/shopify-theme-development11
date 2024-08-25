@@ -60,8 +60,8 @@
                {% endfor %}
             {% endif %}
             <div class="new-comment">
+                <h3>Write your comment here</h3>
                 {% form 'new_comment', article %}
-
                     <div class="row my-2">
                         <div class="col">
                             <input type="text" name="comment[author]" id="" class="form-control" placeholder="Name">
@@ -71,7 +71,7 @@
                         </div>
                       </div>
                     <div class="form-row">
-                        <textarea name="comment[body]" id="" cols="30" rows="10" class="form-control"></textarea>
+                        <textarea name="comment[body]" id="" cols="30" rows="6" class="form-control"></textarea>
                     </div>
                     <div class="action my-3">
                        <button type="submit" class="btn btn-success">Post Comment</button>
