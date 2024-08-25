@@ -54,23 +54,25 @@
                         </div>
                     </article>
                        
-                    </div>            
+                    </div>
+            
                 {% endif %}
                {% endfor %}
             {% endif %}
             <div class="new-comment my-5">
                 <h3>Write your comment here</h3>
                 {% form 'new_comment', article %}
+                    {{ form.errors | default_errors }}
                     <div class="row my-2">
                         <div class="col">
-                            <input type="text" name="comment[author]" id="" class="form-control" placeholder="Name">
+                            <input type="text" name="comment[author]" value="{{ form.author }}" id="" class="form-control" placeholder="Name">
                         </div>
                         <div class="col">
-                            <input type="email" name="comment[email]" id="" class="form-control" placeholder="Email">
+                            <input type="email" name="comment[email]" value="{{ form.email }}" id="" class="form-control" placeholder="Email">
                         </div>
                       </div>
                     <div class="form-row">
-                        <textarea name="comment[body]" id="" cols="30" rows="6" class="form-control"></textarea>
+                        <textarea name="comment[body]" id="" cols="30" rows="6" class="form-control">{{ form.body }}</textarea>
                     </div>
                     <div class="action my-3">
                        <button type="submit" class="btn btn-success">Post Comment</button>
