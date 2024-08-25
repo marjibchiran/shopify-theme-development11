@@ -25,7 +25,14 @@
 
         {% if blog.comments_enabled? %}
             {% if article.comments_count > 0 %}
-                
+               {% for comment in article.comments %}
+                {% if article.status != 'pending' and comment.content %}
+                    <div class="comment-area">
+                        {{ comment.content }}
+                    </div>
+                    
+                {% endif %}
+               {% endfor %}
             {% endif %}
         {% endif %}
     </div>
