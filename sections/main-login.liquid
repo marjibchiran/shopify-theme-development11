@@ -13,11 +13,11 @@
                         {% endif %}
                         <div class="form-group">
                             <input type="email" name="email" placeholder="Email" id="recoverPassword" class="form-control my-3">
-                        {% if from.errors %}
-                            {{ form.errors.messages.form }}
-                        {% endif %}
+                            {% if form.errors %}
+                                {{ form.errors.messages.form }}
+                            {% endif %}
                         </div>
-                        <div class="d-flex justify-content-between align-item-center">
+                        <div class="d-flex justify-content-between align-items-center">
                             <button type="submit" class="btn btn-success">Submit</button>
                             <p id="cancelRecovery">Cancel</p>
                         </div>
@@ -39,7 +39,7 @@
                                 <input type="password" id="customerPassword" class="form-control" name="customer[password]" placeholder="Password">
                             </div> 
                         </div>
-                        <p id="forgotPassword" class="courser-pointer">Forgot Password?</p>
+                        <p id="forgotPassword" class="cursor-pointer">Forgot Password?</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <button type="submit" class="btn btn-success">Login</button>
                             <a href="{{ routes.account_register_url }}">Create New Account</a>
@@ -52,17 +52,14 @@
     </div>
 </div>
 
-
 <script>
-    document.getElementById('forgotPassword').addEventListener('click', function(){
+    document.getElementById('forgotPassword').addEventListener('click', function() {
         document.getElementById('customerLogin').style.display = 'none';
         document.getElementById('passwordRecover').style.display = 'block';
     });
 
-    document.getElementById('cancelRecovery').addEventListener('click', function(){
+    document.getElementById('cancelRecovery').addEventListener('click', function() {
         document.getElementById('passwordRecover').style.display = 'none';    
         document.getElementById('customerLogin').style.display = 'block';
-    
-
-        });
+    });
 </script>
