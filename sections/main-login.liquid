@@ -17,7 +17,10 @@
                             {{ form.errors.messages.form }}
                         {% endif %}
                         </div>
-                        <button type="submit" class="btn btn-success">Submit</button>
+                        <div class="d-flex justify-content-between align-item-center">
+                            <button type="submit" class="btn btn-success">Submit</button>
+                            <p id="cancelRecovery">Cancel</p>
+                        </div>
                     {% endform %}
                 </div>
                 <div id="customerLogin">
@@ -36,7 +39,7 @@
                                 <input type="password" id="customerPassword" class="form-control" name="customer[password]" placeholder="Password">
                             </div> 
                         </div>
-                        <p id="forgotPassword">Forgot Password?</p>
+                        <p id="forgotPassword" class="courser-pointer">Forgot Password?</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <button type="submit" class="btn btn-success">Login</button>
                             <a href="{{ routes.account_register_url }}">Create New Account</a>
@@ -54,5 +57,12 @@
     document.getElementById('forgotPassword').addEventListener('click', function(){
         document.getElementById('customerLogin').style.display = 'none';
         document.getElementById('passwordRecover').style.display = 'block';
-    })
+    });
+
+    document.getElementById('cancelRecovery').addEventListener('click', function(){
+        document.getElementById('passwordRecover').style.display = 'none';    
+        document.getElementById('customerLogin').style.display = 'block';
+    
+
+        });
 </script>
