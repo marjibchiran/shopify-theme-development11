@@ -14,8 +14,9 @@
                     <input type="password" id="customerPassword" class="form-control" name="customer[password]" placeholder="Password">
                    </div> 
                 </div>
-                <div class="my-3">
+                <div class="my-3 d-flex justify-content-between">
                     <button type="submit" class="btn btn-success">Login</button>
+                    <a href="{{ routes.account_register_url }}">Create New Account</a>
                 </div>
                {% endform %} 
             </div>
