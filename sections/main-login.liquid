@@ -2,6 +2,24 @@
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-md-5">
+                <div id="passwordRecover">
+                    <div class="page-heading">
+                        <h2>Reset Your Password</h2>
+                        <span>We will send you an email with recovery codes</span>
+                    </div>
+                    {% form 'recover_customer_password' %}
+                        {% if form.posted_successfully? %}
+                            <span>Recovery Access Sent to your email</span>
+                        {% endif %}
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Email" id="recoverPassword" class="form-control">
+                        {% if from.errors %}
+                            {{ form.errors.messages.form }}
+                        {% endif %}
+                        </div>
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    {% endform %}
+                </div>
                 <div id="customerLogin">
                     <div class="page-header my-5 text-center">
                         <h2>Customer Login</h2>
