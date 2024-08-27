@@ -7,6 +7,9 @@
                 </div>
 
                 {% form 'create_customer' %}
+                    {% if form.errors %}
+                        {{ form.errors |  default_errors }}
+                    {% endif %}
                     <div class="row form-row">
                         <div class="col-6">
                         <input type="text" name="customer[first_name]" class="form-control" placeholder="First Name">
