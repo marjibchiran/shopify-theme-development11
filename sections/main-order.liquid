@@ -49,6 +49,13 @@
                                         <div class="fulfillment">
                                             <span>Fulfillment on: {{ line_item.fulfillment.created_at |  time_tag: format: 'date'}}</span>
                                         </div>
+                                        {% if line_item.fulfillment.tracking_url %}
+                                            <a href="{{ line_item.fulfillment.tracking_url }}">Track Order</a>
+                                        {% endif %}
+                                        {{ line_item.fulfillment.tracking_company }}
+                                        {% if line_item.fulfillment.tracking_number %}
+                                            #{{ line_item.fulfillment.tracking_number }}
+                                        {% endif %}
                                     {% endif %}
                                     </div>
                                 </td>
