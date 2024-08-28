@@ -8,7 +8,7 @@
             <div class="col-md-9">
                 <div class="header">
                     <h3>Order {{ order.name }}</h3>
-                    <p>Placed on{{ order.created_at |  time_tag: format:'date_at_time' }}</p>
+                    <p>Placed on: {{ order.created_at |  time_tag: format:'date_at_time' }}</p>
                     {% if order.cancelled %}
                         <p>Cancelled on {{ order.cancelled_at |  time_tag: format: 'date_at_time' }}</p>
                         <p>Reason: {{ order.cancel_reason }}</p>
