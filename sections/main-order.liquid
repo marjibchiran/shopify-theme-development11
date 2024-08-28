@@ -45,7 +45,11 @@
                                             {% endfor %}
                                         </ul>
                                     {% endif %}
-                                    
+                                    {% if line_item.fulfillment %}
+                                        <div class="fulfillment">
+                                            <span>Fulfillment on: {{ line_item.fulfillment.created_at |  time_tag: format: 'date'}}</span>
+                                        </div>
+                                    {% endif %}
                                     </div>
                                 </td>
                             </tr>
