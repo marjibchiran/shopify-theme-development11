@@ -166,7 +166,18 @@
             </div>
             <div class="col-md-3">
                 <div class="billing-address">
-                  
+                  <h3>Billing Address</h3>
+                  <p> <strong>Payment Status </strong>
+                       {{ order.billing_address |  format_address }} 
+                  </p>
+                </div>
+                <hr>
+                <div class="shipping-address">
+                  <h3>Shipping Address</h3>
+                  <p> <strong>Fulfillment Status </strong>
+                       {{ order.fulfillment_status }} 
+                  </p>
+                  {{ order.billing_address |  format_address }} 
                 </div>
             </div>
         </div>
