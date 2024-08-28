@@ -105,6 +105,22 @@
                                 {{ order.line_items_subtotal_price |  money }}
                             </td>
                         </tr>
+                        {% if order.cart_level_discount_applications != blank %}
+                            <tr>
+                                {% for discount_application in order.cart_level_discount_applications %}
+                                    <td colspan="4">
+                                       Discount
+                                       <span>{{ discount_application.title }}</span> 
+                                    </td>
+                                    <td>
+                                        <div>
+                                            <span>{{ discount_application.total_allocated_amount |  money }}</span>
+                                            <span>{{ discount_allocation.title }}</span>
+                                        </div>
+                                    </td>
+                                {% endfor %}
+                            </tr>
+                        {% endif %}
                     </tfoot>
                 </table>
             </div>
