@@ -1,6 +1,6 @@
 <div class="main-order-details">
     <div class="container">
-        <div class="page-heading">
+        <div class="page-heading my-5">
             <h2>Order Details</h2>
             <a href="{{ routes.account_url }}">Return to Dashboard</a>
         </div>
@@ -9,6 +9,10 @@
                 <div class="header">
                     <h3>Order {{ order.name }}</h3>
                     <p>Placed on{{ order.created_at |  time_tag: format:'date_at_time' }}</p>
+                    {% if order.cancelled %}
+                        <p>Cancelled on {{ order.cancelled_at |  time_tag: format: 'date_at_time' }}</p>
+                        <p>Reason: {{ order.cancel_reason }}</p>
+                    {% endif %}
                 </div>
             </div>
             <div class="col-md-3">
