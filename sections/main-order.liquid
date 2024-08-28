@@ -8,9 +8,9 @@
             <div class="col-md-9">
                 <div class="header mb-3">
                     <h3>Order {{ order.name }}</h3>
-                    <p>Placed on: {{ order.created_at |  time_tag: format:'date_at_time' }}</p>
+                    <p>Placed on: {{ order.created_at | time_tag: "date_at_time" }}</p>
                     {% if order.cancelled %}
-                        <p>Cancelled on {{ order.cancelled_at |  time_tag: format: 'date_at_time' }}</p>
+                        <p>Cancelled on {{ order.cancelled_at | time_tag: "date_at_time" }}</p>
                         <p>Reason: {{ order.cancel_reason_label }}</p>
                     {% endif %}
                 </div>
@@ -25,18 +25,22 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {% for line_item in order.line_items %}
+                        {% for item_item in order.line_items %}
                             <tr>
                                 <td>
                                     <div class="product-info">
-                                        {% if line_item.url != blank %}
-                                        <a href="{{ line_item.url }}">{{ line_item.title }}</a>
+                                        {% if item_item.url %}
+                                            <a href="{{ item_item.url }}">{{ item_item.title }}</a>
                                         {% else %}
-                                        <p>{{ line_item.title }}</p>
-
-                                    {% endif %}
+                                            <p>{{ item_item.title }}</p>
+                                        {% endif %}
                                     </div>
                                 </td>
+                                <!-- Add missing cells for SKU, Price, Quantity, and Total -->
+                                <td>{{ item_item.sku }}</td>
+                                <td>{{ item_item.price }}</td>
+                                <td>{{ item_item.quantity }}</td>
+                                <td>{{ item_item.total }}</td>
                             </tr>
                         {% endfor %}
                     </tbody>
@@ -44,10 +48,9 @@
             </div>
             <div class="col-md-3">
                 <div class="shipping-address">
-
+                    <!-- Shipping address content here -->
                 </div>
             </div>
         </div>
-        
     </div>
 </div>
