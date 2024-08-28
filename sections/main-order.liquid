@@ -120,7 +120,24 @@
                                     </td>
                                 {% endfor %}
                             </tr>
+                            
                         {% endif %}
+                        
+                        {% for shipping_method in order.shipping_methods %}
+                            <tr>
+                                <td colspan="4">
+                                    Shipping Methods: ({{ shipping_method.price | money }})
+                                </td>
+                            </tr>
+                        {% endfor %}    
+                        {% for tax_line in order.tax_lines %}
+                            <tr>
+                                <td colspan="4">
+                                Tax ({{ tax_line.title }})
+                                {{ tax_line.rate | times: 100 }}
+                                </td>
+                            </tr>
+                        {% endfor %}    
                     </tfoot>
                 </table>
             </div>
