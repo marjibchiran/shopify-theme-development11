@@ -2,6 +2,21 @@
     <div class="container">
         <div class="page-heading">
             <h2>Order Details</h2>
+            <a href="{{ routes.account_url }}">Return to Dashboard</a>
         </div>
+        <div class="row">
+            <div class="col-md-9">
+                <div class="header">
+                    <h3>Order {{ order.name }}</h3>
+                    <p>Placed on{{ order.created_at |  time_tag: format:'date_at_time' }}</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="shipping-address">
+
+                </div>
+            </div>
+        </div>
+        
     </div>
 </div>
