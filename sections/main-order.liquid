@@ -126,8 +126,9 @@
                         {% for shipping_method in order.shipping_methods %}
                             <tr>
                                 <td colspan="4">
-                                    Shipping Methods: ({{ shipping_method.price | money }})
+                                    Shipping Methods:
                                 </td>
+                                <td> ({{ shipping_method.price | money }}) </td>
                             </tr>
                         {% endfor %}    
                         {% for tax_line in order.tax_lines %}
