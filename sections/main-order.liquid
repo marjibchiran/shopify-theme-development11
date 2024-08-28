@@ -35,6 +35,17 @@
                                         <p>{{ line_item.title }}</p>
 
                                     {% endif %}
+                                    {% if line_item.line_level_discount_allocations != blank %}
+                                        <ul>
+                                            {% for discount_allocation in line_item.line_level_discount_allocations %}
+                                                <li>
+                                                    {{- discount_allocation.discount_application.title -}}
+                                                    (-{{- discount_allocation.amount |  money -}})
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                    
                                     </div>
                                 </td>
                             </tr>
