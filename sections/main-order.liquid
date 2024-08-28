@@ -139,7 +139,27 @@
                                     {{ tax_line.price |  money }}
                                 </td>
                             </tr>
-                        {% endfor %}    
+                        {% endfor %}
+                        {% if order.total_duties %}
+                            <tr>
+                                <td colspan="4">Total Duties:</td>
+                                <td>{{ order.total_duties |  money }}</td>
+                            </tr>
+                        {% endif %}
+                        {% if order.total_refunded_amount > 0 %}
+                            <tr>
+                                <td colspan="4">Refunded</td>
+                                <td>-{{ order.total_refunded_amount |  money_with_currency }}</td>
+                            </tr>
+                        {% endif %}  
+                        <tr>
+                            <td colspan="3">
+                                <h3>Total</h3>
+                            </td>
+                            <td colspan="2">
+                                <h3>{{ order.total_net_amount |  money_with_currency }}</h3>
+                            </td>
+                        </tr>  
                     </tfoot>
                 </table>
             </div>
