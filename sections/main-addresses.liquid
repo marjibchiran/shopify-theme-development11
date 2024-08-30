@@ -1,6 +1,28 @@
-{% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
-{% endschema %}
+<div class="addresses-section">
+    <div class="container">
+        <div class="heading-section text-center my-5">
+            <h2>Address</h2>
+        </div>
+        <div class="row">
+            {% for address in customer.addresses %}
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                         <div class="d-flex">
+                            <div class="col">
+                                <a href="">Delete</a>
+                            </div>
+                            <div class="col text-end">
+                                <a href="">Edit</a>
+                            </div>
+                         </div>   
+                        </div>
+                        <div class="card-body">
+                            {{ address |  format_address }}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
