@@ -111,7 +111,19 @@
             });
 
             var provinces = $(this).find('option:selected').data('provinces');
-            
+            if (provinces.length 0 >) {
+                var $provincesSelect = $(this).closest('.col').next('.col').find('.select-province');
+                var $provincesSelector = $provincesSelect.find('select');
+                var $selectedProvince = $provincesSelector.data('default');
+                $provincesSelector.empty();
+
+                $.each(provinces, function(index, ){
+                    $provincesSelector.append($('<option>', {
+                        value: province[0],
+                        text: province [1]
+                    }));
+                });
+            }
             
         })
     })
