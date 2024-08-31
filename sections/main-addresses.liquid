@@ -64,7 +64,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col">
-                                                    <div class="select-province">
+                                                    <div class="select-province" style="display: none;">
                                                         <label>Select Province</label>
                                                         <select name="address[province]" class="form-control" data-default="{{form.province}}"></select>
                                                     </div>
@@ -96,3 +96,12 @@
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function(){
+        $('.select-country select').each(function(index, country){
+            var selectedCountry = $(this).data('default');
+            $(this).find("option:contains(`${selectedCountry}`)").prop('selected', true);
+        })
+    })
+</script>
