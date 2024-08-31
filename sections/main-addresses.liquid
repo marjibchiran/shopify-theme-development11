@@ -18,86 +18,79 @@
                          </div>   
                         </div>
                         <div class="card-body">
-                            {{ address |  format_address }}
+                            {{ address | format_address }}
                         </div>
                     </div>
-                </div>
-                {% comment %} Bootstrap Modal Start  {% endcomment %}
 
-                    <div class="modal fade" id="editModal{{ forloop.index }}" tabindex="-1" role="dialog" aria-labelledby="editModalyLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                        <div class="modal-header d-flex justify-content-between align-items-center">
-                            <h5 class="modal-title" id="exampleModalCenterTitle">Edit Address</h5>
-                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                           {% form 'customer_address', address %}
-                            <div class="form-group">
-                            <div class="row">
-                                <div class="col">
-                                    <input type="text" class="form-control" name="address[first_name]" value="{{ form.first_name }}" placeholder="First Name">
+                    <!-- Bootstrap Modal Start -->
+                    <div class="modal fade" id="editModal{{ forloop.index }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header d-flex justify-content-between align-items-center">
+                                    <h5 class="modal-title" id="exampleModalCenterTitle">Edit Address</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
-                                <div class="col">
-                                    <input type="text" class="form-control" name="address[last_name]" value="{{ form.last_name }}" placeholder="Last Name">
-                                </div>
-                            </div>
-                            </div>
-
-                            <div class="form-group mb-2">
-                                <input type="text" name="address[company]" value="{{ form.company }}"   class="form-control" placeholder="Company Name">
-                            </div>
-                            <div class="form-group mb-2">
-                                <input type="text" name="address[address1]" value="{{ form.address1 }}"   class="form-control" placeholder="Address 1">
-                            </div>
-                            <div class="form-group mb-2">
-                                <input type="text" name="address[address2]" value="{{ form.address2 }}"   class="form-control" placeholder="Address 2">
-                            </div>
-                            <div class="form-group mb-2">
-                                <input type="text" name="address[city]" value="{{ form.city }}"   class="form-control" placeholder="City">
-                            </div>
-                            <div class="form-group mb-2">
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="select-country">
-                                            <label>Select Country</label>
-                                            <select name="address[country]" class="form-control" data-default="{{form.country}}">{{ all_country_option_tags }}</select>
+                                <div class="modal-body">
+                                    {% form 'customer_address', address %}
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <input type="text" class="form-control" name="address[first_name]" value="{{ form.first_name }}" placeholder="First Name">
+                                                </div>
+                                                <div class="col">
+                                                    <input type="text" class="form-control" name="address[last_name]" value="{{ form.last_name }}" placeholder="Last Name">
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="select-province">
-                                            <label>Select Province</label>
-                                            <select name="address[province]" class="form-control" data-default="{{form.province}}"></select>
+
+                                        <div class="form-group mb-2">
+                                            <input type="text" name="address[company]" value="{{ form.company }}" class="form-control" placeholder="Company Name">
                                         </div>
-                                    </div>
+                                        <div class="form-group mb-2">
+                                            <input type="text" name="address[address1]" value="{{ form.address1 }}" class="form-control" placeholder="Address 1">
+                                        </div>
+                                        <div class="form-group mb-2">
+                                            <input type="text" name="address[address2]" value="{{ form.address2 }}" class="form-control" placeholder="Address 2">
+                                        </div>
+                                        <div class="form-group mb-2">
+                                            <input type="text" name="address[city]" value="{{ form.city }}" class="form-control" placeholder="City">
+                                        </div>
+                                        <div class="form-group mb-2">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="select-country">
+                                                        <label>Select Country</label>
+                                                        <select name="address[country]" class="form-control" data-default="{{form.country}}">{{ all_country_option_tags }}</select>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="select-province">
+                                                        <label>Select Province</label>
+                                                        <select name="address[province]" class="form-control" data-default="{{form.province}}"></select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group mb-2">
+                                            <input type="text" name="address[zip]" value="{{ form.zip }}" class="form-control mb-2" placeholder="Zip Code">
+                                        </div>
+                                        <div class="form-group mb-2">
+                                            <input type="text" name="address[phone]" value="{{ form.phone }}" class="form-control mb-2" placeholder="Phone No">
+                                        </div>
+                                        <div class="form-group mb-2">
+                                            {{ form.set_as_default_checkbox }}
+                                            <label for="address_default_address_{{form.id}}">Set all as default address</label>
+                                        </div>
+                                        <div class="action my-3">
+                                            <button type="submit" class="btn btn-secondary">Update</button>
+                                            <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cancel</button>
+                                        </div>
+                                    {% endform %}
                                 </div>
                             </div>
-                            <div class="form-group mb-2">
-                                <input type="text" name="address[zip]" value="{{ form.zip }}"   class="form-control mb-2" placeholder="Zip Code">
-                            </div>
-                            <div class="form-group mb-2">
-                                <input type="text" name="address[phone]" value="{{ form.phone }}"   class="form-control mb-2" placeholder="Phone No">
-                            </div>
-
-                            <div class="form-group mb-2">
-                                {{ form.set_as_default_checkbox }}
-                                <label for="address_default_address_{{form.id}}">Set all as default address</label>
-                            </div>
-                            <div class="action my-3">
-                            <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Update</button>
-                            <button type="button" class="btn btn-success">Cancel</button>
-                        </div>
-                            </div>
-                           {% endform %}
-                        </div>
                         </div>
                     </div>
-                    </div>
-                {% comment %}Modal End {% endcomment %}
-
-
+                    <!-- Modal End -->
                 </div>
             {% endfor %}
         </div>
