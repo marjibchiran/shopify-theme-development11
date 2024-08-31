@@ -137,11 +137,33 @@ $(document).ready(function () {
                     return false; // Stop the loop once the selected option is found
                 }
             });
-
-            // Show the province selector
             $provincesSelect.show();
+        } else{
+            $provincesSelect.hide();
         }
     });
+    //For changing Country
+    $('.select-country select').change(function(){
+        var selectedCountry = $(this).find('option:selected');
+        var provinces = selectedCountry.data('provinces');
+        if (provinces.length > 0){
+
+        var $provincesSelect = $(this).closest('.col').next('.col').find('.select-province');    
+        var $provincesSelector = $provincesSelect.find('select');
+        $provincesSelector.empty();
+        $.each(provinces, function (index, province) {
+                $provincesSelector.append($('<option>', {
+                    value: province[0],
+                    text: province[1]
+                }));
+            });
+            
+
+            $provincesSelect.show();
+        }else{
+            $provincesSelect.hide();
+        }
+    })
 });
 
 
@@ -239,4 +261,6 @@ document.addEventListener('DOMContentLoaded', function () {
 <!-- Javascript End -->
 
 </script>
+
+
 
