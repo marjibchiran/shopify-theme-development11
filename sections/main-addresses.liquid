@@ -172,7 +172,7 @@
 <!-- Add New Address Modal End -->
 
 <!-- Delete Address Bootstrap Modal Start -->
-<div class="modal fade" id="deleteAddress" tabindex="-1" role="dialog" aria-labelledby="deleteAddressLabel" aria-hidden="true">
+<div class="modal fade" id="deleteAddress{{ forloop.index }}" tabindex="-1" role="dialog" aria-labelledby="deleteAddressLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header d-flex justify-content-between align-items-center">
@@ -184,11 +184,9 @@
             </div>
             <div class="card-footer">
                 <div class="action my-3 d-flex justify-content-end">
-                    <!-- Corrected Form Structure -->
+                    <!-- Make sure each form has the correct action -->
                     <form action="/account/addresses/{{ address.id }}" method="post" class="mx-2 address-delete-form">
-                        <!-- CSRF Token if needed by your backend -->
                         <input type="hidden" name="_method" value="delete">
-                        <!-- Submit button inside form -->
                         <button type="submit" class="btn btn-danger">Delete</button>
                     </form>
                     <button type="button" class="btn btn-success mx-2" data-bs-dismiss="modal">Cancel</button>
