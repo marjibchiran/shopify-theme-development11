@@ -22,7 +22,7 @@
                         </div>
                     </div>
 
-                {% comment %} Modal Start  {% endcomment %}
+                {% comment %} Bootstrap Modal Start  {% endcomment %}
 
                     <div class="modal fade" id="editModal{{ forloop.index }}" tabindex="-1" role="dialog" aria-labelledby="editModalyLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -34,7 +34,18 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                           Modaly Body
+                           {% form 'customer_address', address %}
+                            <div class="form-group">
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control" name="address[first_name]" value="{{ form.first_name }}" placeholder="First Name">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" name="address[last_name]" value="{{ form.last_name }}" placeholder="Last Name">
+                                </div>
+                            </div>
+                            </div>
+                           {% endform %}
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
