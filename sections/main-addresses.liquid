@@ -14,10 +14,10 @@
                         <div class="card-header">
                          <div class="d-flex">
                             <div class="col">
-                                <a href="">Delete</a>
+                                <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteAddress">Delete</button>
                             </div>
                             <div class="col text-end">
-                                <a href="#editModal{{ forloop.index }}" data-bs-toggle="modal">Edit</a>
+                                <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editModal{{ forloop.index }}">Edit</button>
                             </div>
                          </div>   
                         </div>
@@ -170,6 +170,32 @@
     </div>
 </div>
 <!-- Add New Address Modal End -->
+
+<!-- Delete Address Bootstrap Modal Start -->
+<div class="modal fade" id="deleteAddress" tabindex="-1" role="dialog" aria-labelledby="deleteAddressLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header d-flex justify-content-between align-items-center">
+                <h5 class="modal-title" id="deleteAddressTitle">Warning...</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h4>Are you sure to Delete Address?</h4>
+            </div>
+            <div class="card-footer">
+                <div class="action my-3 d-flex justify-content-end">
+                    <div class="delete-form">
+                        <form action="/account/addresses/{{ address.id }}" method="post" class="mx-2"></form>
+                        <input type="hidden" name="_method" value="delete">
+                    </div>
+                        <button type="submit" class="btn btn-danger mx-2">Delete</button>
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Delete Address Modal End -->
 
 
 <script>
