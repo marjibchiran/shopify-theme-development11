@@ -98,48 +98,87 @@
 </div>
 
 <script>
-$(document).ready(function () {
-    $('.select-country select').each(function (index, countrySelect) {
-        var selectedCountry = $(this).data('default');
-        
-        $(this).find('option').each(function () {
-            if ($(this).val() === selectedCountry) {
-                $(this).prop('selected', true);
-                return false; // Stop the loop once the selected option is found
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.select-country select').forEach(function (countrySelect) {
+        var selectedCountry = countrySelect.getAttribute('data-default');
+
+        // Select the country option based on the data-default attribute
+        Array.from(countrySelect.options).forEach(function (option) {
+            if (option.value === selectedCountry) {
+                option.selected = true;
             }
         });
 
-        var provinces = $(this).find('option:selected').data('provinces');
+        // Fetch provinces from the selected country option's data attribute
+        var provinces = countrySelect.selectedOptions[0].getAttribute('data-provinces');
 
-        // Check if provinces data exists and is an array with elements
-        if (provinces && provinces.length > 0) {
-            var $provincesSelect = $(this).closest('.col').next('.col').find('.select-province');
-            var $provincesSelector = $provincesSelect.find('select');
-            var selectedProvince = $provincesSelector.data('default');
+        if (provinces) {
+            provinces = JSON.parse(provinces);  // Parse provinces data if it's a JSON string
 
-            // Clear the provinces dropdown before populating
-            $provincesSelector.empty();
+            if (provinces.length > 0) {
+                var provinceContainer = countrySelect.closest('.col').nextElementSibling.querySelector('.select-province');
+                var provinceSelect = provinceContainer.querySelector('select');
+                var selectedProvince = provinceSelect.getAttribute('data-default');
 
-            // Populate the provinces dropdown
-            $.each(provinces, function (index, province) {
-                $provincesSelector.append($('<option>', {
-                    value: province[0],
-                    text: province[1]
-                }));
-            });
+                // Clear existing options in the province dropdown
+                provinceSelect.innerHTML = '';
 
-            // Set the selected province in the dropdown
-            $provincesSelector.find('option').each(function () {
-                if ($(this).val() === selectedProvince) {
-                    $(this).prop('selected', true);
-                    return false; // Stop the loop once the selected option is found
-                }
-            });
+                // Populate the province dropdown
+                provinces.forEach(function (province) {
+                    var option = document.createElement('option');
+                    option.value = province[0];
+                    option.textContent = province[1];
+                    provinceSelect.appendChild(option);
+                });
 
-            // Show the province selector
-            $provincesSelect.show();
+                // Set the selected province if it exists
+                Array.from(provinceSelect.options).forEach(function (option) {
+                    if (option.value === selectedProvince) {
+                        option.selected = true;
+                    }
+                });
+
+                // Show the province selector
+                provinceContainer.style.display = 'block';
+            }
         }
     });
-});
 
+
+
+    // Event listener for country selection changes
+    document.querySelectorAll('.select-country select').forEach(function (countrySelect) {
+        countrySelect.addEventListener('change', function () {
+            var provinceContainer = this.closest('.col').nextElementSibling.querySelector('.select-province');
+            var provinceSelect = provinceContainer.querySelector('select');
+            
+            // Clear existing options
+            provinceSelect.innerHTML = '';
+
+            // Fetch new provinces data
+            var provinces = this.selectedOptions[0].getAttribute('data-provinces');
+            if (provinces) {
+                provinces = JSON.parse(provinces);
+                if (provinces.length > 0) {
+                    // Populate the province dropdown
+                    provinces.forEach(function (province) {
+                        var option = document.createElement('option');
+                        option.value = province[0];
+                        option.textContent = province[1];
+                        provinceSelect.appendChild(option);
+                    });
+
+                    // Show the province selector
+                    provinceContainer.style.display = 'block';
+                } else {
+                    // Hide the province selector if there are no provinces
+                    provinceContainer.style.display = 'none';
+                }
+            } else {
+                // Hide the province selector if no provinces data is available
+                provinceContainer.style.display = 'none';
+            }
+        });
+    });
+});
 </script>
