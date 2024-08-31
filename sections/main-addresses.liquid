@@ -101,28 +101,13 @@
 <script>
 <!-- Jquery Start -->
 $(document).ready(function () {
-    $('.select-country select').each(function (index, countrySelect) {
-        var selectedCountry = $(this).data('default');
-        
-        $(this).find('option').each(function () {
-            if ($(this).val() === selectedCountry) {
-                $(this).prop('selected', true);
-                return false; // Stop the loop once the selected option is found
-            }
-        });
+    // Function to populate provinces dropdown
+    function populateProvinces($countrySelect, provinces, selectedProvince) {
+        var $provincesSelect = $countrySelect.closest('.col').next('.col').find('.select-province');
+        var $provincesSelector = $provincesSelect.find('select');
+        $provincesSelector.empty();
 
-        var provinces = $(this).find('option:selected').data('provinces');
-
-        // Check if provinces data exists and is an array with elements
         if (provinces && provinces.length > 0) {
-            var $provincesSelect = $(this).closest('.col').next('.col').find('.select-province');
-            var $provincesSelector = $provincesSelect.find('select');
-            var selectedProvince = $provincesSelector.data('default');
-
-            // Clear the provinces dropdown before populating
-            $provincesSelector.empty();
-
-            // Populate the provinces dropdown
             $.each(provinces, function (index, province) {
                 $provincesSelector.append($('<option>', {
                     value: province[0],
@@ -130,40 +115,54 @@ $(document).ready(function () {
                 }));
             });
 
-            // Set the selected province in the dropdown
-            $provincesSelector.find('option').each(function () {
-                if ($(this).val() === selectedProvince) {
-                    $(this).prop('selected', true);
-                    return false; // Stop the loop once the selected option is found
-                }
-            });
+            // Set the selected province
+            if (selectedProvince) {
+                $provincesSelector.find('option').each(function () {
+                    if ($(this).val() === selectedProvince) {
+                        $(this).prop('selected', true);
+                        return false; // Stop the loop once the selected option is found
+                    }
+                });
+            }
+
             $provincesSelect.show();
-        } else{
+        } else {
             $provincesSelect.hide();
         }
+    }
+
+    // Initial setup
+    $('.select-country select').each(function () {
+        var selectedCountry = $(this).data('default');
+        $(this).find('option').each(function () {
+            if ($(this).val() === selectedCountry) {
+                $(this).prop('selected', true);
+                return false;
+            }
+        });
+
+        var provinces = $(this).find('option:selected').data('provinces');
+        var selectedProvince = $(this).closest('.col').next('.col').find('.select-province select').data('default');
+        
+        // If provinces is a JSON string, parse it
+        if (typeof provinces === 'string') {
+            provinces = JSON.parse(provinces);
+        }
+
+        populateProvinces($(this), provinces, selectedProvince);
     });
-    //For changing Country
-    $('.select-country select').change(function(){
-        var selectedCountry = $(this).find('option:selected');
-        var provinces = selectedCountry.data('provinces');
-        if (provinces.length > 0){
 
-        var $provincesSelect = $(this).closest('.col').next('.col').find('.select-province');    
-        var $provincesSelector = $provincesSelect.find('select');
-        $provincesSelector.empty();
-        $.each(provinces, function (index, province) {
-                $provincesSelector.append($('<option>', {
-                    value: province[0],
-                    text: province[1]
-                }));
-            });
-            
-
-            $provincesSelect.show();
-        }else{
-            $provincesSelect.hide();
+    // Event handler for changing the country
+    $('.select-country select').change(function () {
+        var provinces = $(this).find('option:selected').data('provinces');
+        
+        // If provinces is a JSON string, parse it
+        if (typeof provinces === 'string') {
+            provinces = JSON.parse(provinces);
         }
-    })
+
+        populateProvinces($(this), provinces, null);
+    });
 });
 
 
