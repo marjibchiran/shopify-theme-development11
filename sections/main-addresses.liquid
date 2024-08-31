@@ -98,27 +98,21 @@
 </div>
 
 <script>
-  $(document).ready(function() {
-    $('.select-country select').each((index, countrySelect) => {
-        const selectedCountry = $(countrySelect).data('default');
-        $(countrySelect).find('option').each((_, option) => {
-            if ($(option).val() === selectedCountry) {
-                $(option).prop('selected', true);
-                return false;
-            }
-        });
-    });
+    $(document).ready(function(){
+        $('.select-country select').each(function(index, country){
+            var selectedCountry = $(this).data('default');
+            $(this).find('option').each(function(){
+                var country = $(this).val();
+                if(country == selectedCountry){
+                    console.log(country);
+                    $(this).prop('selected', true);
+                    return false;
+                }
+            });
 
-    // Show/Hide province selector based on country selection
-    $('.select-country select').on('change', function() {
-        const provinceSelect = $(this).closest('.form-group').find('.select-province');
-        if ($(this).val() === 'Your country code with provinces') {
-            provinceSelect.show();
-            // You might want to populate the province dropdown here
-        } else {
-            provinceSelect.hide();
-        }
-    });
-});
-
+            var provinces = $(this).find('option:selected').data('provinces');
+            console.log(provinces);
+            
+        })
+    })
 </script>
