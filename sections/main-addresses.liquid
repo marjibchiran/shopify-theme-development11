@@ -123,6 +123,15 @@
                         text: province [1]
                     }));
                 });
+
+                $provincesSelector.find(function(){
+
+                var province = $(this).val();
+                    if (province == selectedProvince) {
+                        $(this).prop('selected', true);
+                        return false;
+                    }
+                })
                 $('.select-province').show();
             }
             
