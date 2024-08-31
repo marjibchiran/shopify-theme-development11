@@ -46,19 +46,19 @@
                             </div>
                             </div>
 
-                            <div class="form-group">
-                                <input type="text" name="address[company]" value="{{ form.company }}"   class="form-control mb-2" placeholder="Company Name">
+                            <div class="form-group mb-2">
+                                <input type="text" name="address[company]" value="{{ form.company }}"   class="form-control" placeholder="Company Name">
                             </div>
-                            <div class="form-group">
-                                <input type="text" name="address[address1]" value="{{ form.address1 }}"   class="form-control mb-2" placeholder="Address 1">
+                            <div class="form-group mb-2">
+                                <input type="text" name="address[address1]" value="{{ form.address1 }}"   class="form-control" placeholder="Address 1">
                             </div>
-                            <div class="form-group">
-                                <input type="text" name="address[address2]" value="{{ form.address2 }}"   class="form-control mb-2" placeholder="Address 2">
+                            <div class="form-group mb-2">
+                                <input type="text" name="address[address2]" value="{{ form.address2 }}"   class="form-control" placeholder="Address 2">
                             </div>
-                            <div class="form-group">
-                                <input type="text" name="address[city]" value="{{ form.city }}"   class="form-control mb-2" placeholder="City">
+                            <div class="form-group mb-2">
+                                <input type="text" name="address[city]" value="{{ form.city }}"   class="form-control" placeholder="City">
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mb-2">
                                 <div class="row">
                                     <div class="col">
                                         <div class="select-country">
@@ -74,6 +74,21 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="form-group mb-2">
+                                <input type="text" name="address[zip]" value="{{ form.zip }}"   class="form-control mb-2" placeholder="Zip Code">
+                            </div>
+                            <div class="form-group mb-2">
+                                <input type="text" name="address[phone]" value="{{ form.phone }}"   class="form-control mb-2" placeholder="Phone No">
+                            </div>
+
+                            <div class="form-group mb-2">
+                                {{ form.set_as_default_checkbox }}
+                                <label for="address_default_address_{{form.id}}">Set all as default address</label>
+                            </div>
+                            <div class="action my-3">
+                                <button type="submit" class="btn btn-success">Update</button>
+                            </div>
+
                            {% endform %}
                         </div>
                         <div class="modal-footer">
