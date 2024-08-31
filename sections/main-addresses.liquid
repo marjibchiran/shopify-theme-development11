@@ -101,7 +101,14 @@
     $(document).ready(function(){
         $('.select-country select').each(function(index, country){
             var selectedCountry = $(this).data('default');
-            $(this).find("option:contains(`${selectedCountry}`)").prop('selected', true);
+            $(this).find('option').each(function(){
+                var country = $(this).val();
+                if(country == selectedCountry){
+                    console.log(country);
+                    $(this).prop('selected', true);
+                    return false;
+                }
+            })
         })
     })
 </script>
