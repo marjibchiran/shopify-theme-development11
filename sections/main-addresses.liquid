@@ -173,88 +173,71 @@ $(document).ready(function () {
 
   /*
 document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.select-country select').forEach(function (countrySelect) {
-        var selectedCountry = countrySelect.getAttribute('data-default');
+    // Function to populate provinces dropdown
+    function populateProvinces(countrySelect, provinces, selectedProvince) {
+        const provinceSelectContainer = countrySelect.closest('.col').nextElementSibling.querySelector('.select-province');
+        const provinceSelector = provinceSelectContainer.querySelector('select');
+        provinceSelector.innerHTML = ''; // Clear the existing options
 
-        // Select the country option based on the data-default attribute
+        if (provinces && provinces.length > 0) {
+            provinces.forEach(function (province) {
+                const option = document.createElement('option');
+                option.value = province[0];
+                option.text = province[1];
+                provinceSelector.appendChild(option);
+            });
+
+            if (selectedProvince) {
+                Array.from(provinceSelector.options).forEach(function (option) {
+                    if (option.value === selectedProvince) {
+                        option.selected = true;
+                    }
+                });
+            }
+
+            provinceSelectContainer.style.display = 'block';
+        } else {
+            provinceSelectContainer.style.display = 'none';
+        }
+    }
+
+    // Initial setup
+    document.querySelectorAll('.select-country select').forEach(function (countrySelect) {
+        const selectedCountry = countrySelect.getAttribute('data-default');
+
         Array.from(countrySelect.options).forEach(function (option) {
             if (option.value === selectedCountry) {
                 option.selected = true;
             }
         });
 
-        // Fetch provinces from the selected country option's data attribute
-        var provinces = countrySelect.selectedOptions[0].getAttribute('data-provinces');
+        let provinces = countrySelect.options[countrySelect.selectedIndex].getAttribute('data-provinces');
+        const provinceSelector = countrySelect.closest('.col').nextElementSibling.querySelector('.select-province select');
+        const selectedProvince = provinceSelector.getAttribute('data-default');
 
-        if (provinces) {
-            provinces = JSON.parse(provinces);  // Parse provinces data if it's a JSON string
-
-            if (provinces.length > 0) {
-                var provinceContainer = countrySelect.closest('.col').nextElementSibling.querySelector('.select-province');
-                var provinceSelect = provinceContainer.querySelector('select');
-                var selectedProvince = provinceSelect.getAttribute('data-default');
-
-                // Clear existing options in the province dropdown
-                provinceSelect.innerHTML = '';
-
-                // Populate the province dropdown
-                provinces.forEach(function (province) {
-                    var option = document.createElement('option');
-                    option.value = province[0];
-                    option.textContent = province[1];
-                    provinceSelect.appendChild(option);
-                });
-
-                // Set the selected province if it exists
-                Array.from(provinceSelect.options).forEach(function (option) {
-                    if (option.value === selectedProvince) {
-                        option.selected = true;
-                    }
-                });
-
-                // Show the province selector
-                provinceContainer.style.display = 'block';
-            }
+        // If provinces is a JSON string, parse it
+        if (typeof provinces === 'string') {
+            provinces = JSON.parse(provinces);
         }
+
+        populateProvinces(countrySelect, provinces, selectedProvince);
     });
 
-
-
-    // Event listener for country selection changes
+    // Event handler for changing the country
     document.querySelectorAll('.select-country select').forEach(function (countrySelect) {
         countrySelect.addEventListener('change', function () {
-            var provinceContainer = this.closest('.col').nextElementSibling.querySelector('.select-province');
-            var provinceSelect = provinceContainer.querySelector('select');
-            
-            // Clear existing options
-            provinceSelect.innerHTML = '';
+            let provinces = this.options[this.selectedIndex].getAttribute('data-provinces');
 
-            // Fetch new provinces data
-            var provinces = this.selectedOptions[0].getAttribute('data-provinces');
-            if (provinces) {
+            // If provinces is a JSON string, parse it
+            if (typeof provinces === 'string') {
                 provinces = JSON.parse(provinces);
-                if (provinces.length > 0) {
-                    // Populate the province dropdown
-                    provinces.forEach(function (province) {
-                        var option = document.createElement('option');
-                        option.value = province[0];
-                        option.textContent = province[1];
-                        provinceSelect.appendChild(option);
-                    });
-
-                    // Show the province selector
-                    provinceContainer.style.display = 'block';
-                } else {
-                    // Hide the province selector if there are no provinces
-                    provinceContainer.style.display = 'none';
-                }
-            } else {
-                // Hide the province selector if no provinces data is available
-                provinceContainer.style.display = 'none';
             }
+
+            populateProvinces(this, provinces, null);
         });
     });
 });
+
 */
 
 <!-- Javascript End -->
