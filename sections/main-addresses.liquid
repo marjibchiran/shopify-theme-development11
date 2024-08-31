@@ -271,3 +271,77 @@
         })
     });
 </script>
+
+<!-- Javascript Start -->
+
+  /*
+document.addEventListener('DOMContentLoaded', function () {
+    // Function to populate provinces dropdown
+    function populateProvinces(countrySelect, provinces, selectedProvince) {
+        const provinceSelectContainer = countrySelect.closest('.col').nextElementSibling.querySelector('.select-province');
+        const provinceSelector = provinceSelectContainer.querySelector('select');
+        provinceSelector.innerHTML = ''; // Clear the existing options
+
+        if (provinces && provinces.length > 0) {
+            provinces.forEach(function (province) {
+                const option = document.createElement('option');
+                option.value = province[0];
+                option.text = province[1];
+                provinceSelector.appendChild(option);
+            });
+
+            if (selectedProvince) {
+                Array.from(provinceSelector.options).forEach(function (option) {
+                    if (option.value === selectedProvince) {
+                        option.selected = true;
+                    }
+                });
+            }
+
+            provinceSelectContainer.style.display = 'block';
+        } else {
+            provinceSelectContainer.style.display = 'none';
+        }
+    }
+
+    // Initial setup
+    document.querySelectorAll('.select-country select').forEach(function (countrySelect) {
+        const selectedCountry = countrySelect.getAttribute('data-default');
+
+        Array.from(countrySelect.options).forEach(function (option) {
+            if (option.value === selectedCountry) {
+                option.selected = true;
+            }
+        });
+
+        let provinces = countrySelect.options[countrySelect.selectedIndex].getAttribute('data-provinces');
+        const provinceSelector = countrySelect.closest('.col').nextElementSibling.querySelector('.select-province select');
+        const selectedProvince = provinceSelector.getAttribute('data-default');
+
+        // If provinces is a JSON string, parse it
+        if (typeof provinces === 'string') {
+            provinces = JSON.parse(provinces);
+        }
+
+        populateProvinces(countrySelect, provinces, selectedProvince);
+    });
+
+    // Event handler for changing the country
+    document.querySelectorAll('.select-country select').forEach(function (countrySelect) {
+        countrySelect.addEventListener('change', function () {
+            let provinces = this.options[this.selectedIndex].getAttribute('data-provinces');
+
+            // If provinces is a JSON string, parse it
+            if (typeof provinces === 'string') {
+                provinces = JSON.parse(provinces);
+            }
+            populateProvinces(this, provinces, null);
+        });
+    });
+});
+
+*/
+
+<!-- Javascript End -->
+
+</script>
