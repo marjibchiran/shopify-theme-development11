@@ -43,6 +43,9 @@
                 success: function(){
                     $('#successMessage').show();
                     form.trigger('reset');
+                },
+               error: function(){
+                    alert("Something is wrong, please try again!");
                 }
             })
         })
