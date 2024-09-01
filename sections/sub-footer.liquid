@@ -26,27 +26,24 @@
 </div>
 
 <script>
-
     $(document).ready(function(){
         $('#newsletterForm').on('submit', function(event){
             event.preventDefault();
-           var form = $(this);
-           $.ajax({
-            type: 'POST',
-            url: form.attr('action'),
-            data: form.serialize(),
-            success: function(){
-                $('#successLetter').show();
-                form.trigger('reset')
-            },
-            error: function(){
-                alert("Something is wrong, please try again"); 
-            }
-
-           })
-            
-        })
-    })
+            var form = $(this);
+            $.ajax({
+                type: 'POST',
+                url: form.attr('action'),
+                data: form.serialize(),
+                success: function(){
+                    $('#successLetter').show();  // Corrected the show() method
+                    form.trigger('reset');
+                },
+                error: function(){
+                    alert("Something is wrong, please try again");
+                }
+            });
+        });
+    });
 </script>
 
 {% schema %}
