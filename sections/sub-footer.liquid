@@ -1,3 +1,11 @@
+{% style %}
+    .sub-footer{
+        background: {{ section.settings.bg-color }}
+    }
+
+{% endstyle %}
+
+
 <div class="sub-footer my-5">
     <div class="sub-footer container py-3">
         <div class="row justify-content-center">
@@ -60,6 +68,12 @@
                 "type": "richtext",
                 "id": "rte",
                 "label": "Text"
+            },
+            {
+                "type": "color",
+                "id": "bg-color",
+                "label": "Background Color",
+                "default": "#FF474C"
             }
         ]
 }
