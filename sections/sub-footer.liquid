@@ -2,10 +2,12 @@
     <div class="sub-footer container py-3">
         <div class="row justify-content-center">
             <div class="col-md-5">
-                <h3>Subscribe for Newsletter</h3>
+                <h3>{{ section.settings.title }}</h3>
+                {% if section.settings.rte != blank%}
                 <div class="rte">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam eos natus quisquam vel?</p>
+                    {{ section.settings.rte }}
                 </div>
+            {% endif %}
                 {% form 'customer', id: 'newsletterForm' %}
                     <input type="hidden" name="contact[tags]" value="newsletter">
                     <div class="input-group">
@@ -51,7 +53,17 @@
 {
     "name": "Sub Footer",
     "settings": [
-        
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Heading",
+                "default": "Subscribe for Newsletter" 
+            },
+            {
+                "type": "richtext",
+                "id": "rte",
+                "label": "Text"
+            }
         ]
 }
 {% endschema %}
