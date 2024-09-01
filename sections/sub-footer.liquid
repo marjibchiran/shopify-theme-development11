@@ -32,7 +32,7 @@
 </div>
 
 <script>
-  $(document).ready(function(){
+ $(document).ready(function(){
     $('#newsletterForm').on('submit', function(event){
         event.preventDefault();
         var form = $(this);
@@ -41,12 +41,10 @@
             url: form.attr('action'),
             data: form.serialize(),
             success: function(){
-                console.log("Form submitted successfully.");
                 $('#successMessage').show();
                 form.trigger('reset');
             },
             error: function(){
-                console.log("Form submission failed.");
                 alert("Something is wrong, please try again!");
             }
         });
