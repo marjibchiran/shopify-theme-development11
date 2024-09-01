@@ -32,24 +32,27 @@
 </div>
 
 <script>
-    $(document).ready(function(){
-        $('#newsletterForm').on('submit', function(event){
-            event.preventDefault();
-            var form = $(this);
-            $.ajax({
-                type: 'POST',
-                url: form.attr('action'),
-                data: form.serialize(),
-                success: function(){
-                    $('#successMessage').show();
-                    form.trigger('reset');
-                },
-               error: function(){
-                    alert("Something is wrong, please try again!");
-                }
-            })
-        })
-    })
+  $(document).ready(function(){
+    $('#newsletterForm').on('submit', function(event){
+        event.preventDefault();
+        var form = $(this);
+        $.ajax({
+            type: 'POST',
+            url: form.attr('action'),
+            data: form.serialize(),
+            success: function(){
+                console.log("Form submitted successfully.");
+                $('#successMessage').show();
+                form.trigger('reset');
+            },
+            error: function(){
+                console.log("Form submission failed.");
+                alert("Something is wrong, please try again!");
+            }
+        });
+    });
+});
+
 </script>
 
 {% schema %}
