@@ -20,6 +20,17 @@
     </div>
 </div>
 
+<script>
+
+    $(document).ready(function(){
+        $('#newsletterForm').on('submit', function(event){
+            event.preventDefault();
+            console.log('Clicked');
+            
+        })
+    })
+</script>
+
 {% schema %}
 {
     "name": "Sub Footer",
