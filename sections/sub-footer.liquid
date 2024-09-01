@@ -1,32 +1,30 @@
 {% style %}
     .sub-footer{
-        background: {{ section.settings.bg-color }}
+        background: {{ section.settings.bg_color }};
     }
-
 {% endstyle %}
 
-
-<div class="sub-footer my-5">
-    <div class="sub-footer container py-3">
+<div class="sub-footer py-4 mt-4">
+    <div class="sub-footer-main container my-4">
         <div class="row justify-content-center">
-            <div class="col-md-5">
-                <h3>{{ section.settings.title }}</h3>
-                {% if section.settings.rte != blank%}
-                <div class="rte">
+            <div class="col-md-5 text-center">
+                <h3 class="mb-4">{{ section.settings.title }}</h3>
+                {% if section.settings.rte != blank %}
+                <div class="rte mb-3">
                     {{ section.settings.rte }}
                 </div>
-            {% endif %}
-                {% form 'customer', id: 'newsletterForm' %}
+                {% endif %}
+                {% form 'customer', id:'newsletterForm' %}
                     <input type="hidden" name="contact[tags]" value="newsletter">
                     <div class="input-group">
                         <input type="email" name="contact[email]" class="form-control" placeholder="Email" required>
                         <div class="input-group-append">
-                            <button type="submit" class="input-group-text btn btn-success">Subscribe</button>
+                            <button type="submit" class="input-group-text btn btn-dark">Subscribe</button>
                         </div>
                     </div>
                 {% endform %}
-                <div id="successLetter" class="my-2" style="display: none;">
-                    <p class="text-success">Subscribed Successfully</p>
+                <div id="successMessage" style="display: none;">
+                    <p class="text-success">Subscribed Successfully!</p>
                 </div>
             </div>
         </div>
@@ -43,38 +41,38 @@
                 url: form.attr('action'),
                 data: form.serialize(),
                 success: function(){
-                    $('#successLetter').show();  // Corrected the show() method
+                    $('#successMessage').show();
                     form.trigger('reset');
                 },
                 error: function(){
-                    alert("Something is wrong, please try again");
+                    alert("Something is wrong, please try again!");
                 }
-            });
-        });
-    });
+            })
+        })
+    })
 </script>
 
 {% schema %}
 {
-    "name": "Sub Footer",
+    "name": "Sub footer",
     "settings": [
-            {
-                "type": "text",
-                "id": "title",
-                "label": "Heading",
-                "default": "Subscribe for Newsletter" 
-            },
-            {
-                "type": "richtext",
-                "id": "rte",
-                "label": "Text"
-            },
-            {
-                "type": "color",
-                "id": "bg-color",
-                "label": "Background Color",
-                "default": "#6c757d"
-            }
-        ]
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "Subscribe to our emails"
+        },
+        {
+            "type": "richtext",
+            "id": "rte",
+            "label": "Text"
+        },
+        {
+            "type": "color",
+            "id": "bg_color",
+            "label": "Background color",
+            "default": "#DDDDDD"
+        }
+    ]
 }
 {% endschema %}
