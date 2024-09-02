@@ -25,7 +25,6 @@
         "brand_info_ErgFCJ": {
           "type": "brand_info",
           "settings": {
-            "image": "shopify:\/\/shop_images\/t.png",
             "rte": "<p>Details About Brands<\/p>"
           }
         },
