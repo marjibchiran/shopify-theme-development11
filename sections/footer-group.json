@@ -28,10 +28,18 @@
             "image": "shopify:\/\/shop_images\/t.png",
             "rte": "<p>Details About Brands<\/p>"
           }
+        },
+        "menu_fGhEb3": {
+          "type": "menu",
+          "settings": {
+            "title": "Footer Menu",
+            "footer_menu": "footer"
+          }
         }
       },
       "block_order": [
-        "brand_info_ErgFCJ"
+        "brand_info_ErgFCJ",
+        "menu_fGhEb3"
       ],
       "settings": {
         "column": "3"
