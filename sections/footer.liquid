@@ -58,7 +58,7 @@
                                 {{ block.settings.html }}
                             </div>
                             {% if block.settings.payment_methods != blank %}
-                                <div class="payment-methods">
+                                <div class="payment-methods mt-2">
                                     {{ block.settings.payment_methods |  image_url: width: 200 |  image_tag  }}
                                 </div>
                             {% endif %}
