@@ -26,7 +26,7 @@
           "type": "brand_info",
           "settings": {
             "image": "shopify:\/\/shop_images\/t.png",
-            "rte": "<p>Details About Brands<\/p>"
+            "rte": "<p>Details About Your Brands<\/p>"
           }
         },
         "menu_fGhEb3": {
@@ -51,7 +51,8 @@
         "info_Yw7tQF"
       ],
       "settings": {
-        "column": "3"
+        "column": "3",
+        "copyright": "&copy; {{ shop.name }} | All rights reserved!"
       }
     }
   },
