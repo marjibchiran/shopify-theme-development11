@@ -30,9 +30,39 @@
                                 {% endif %}
                             </div>
                         {% when 'menu' %}    
-                         
+                         <div class="footer-links">
+                            <div class="link-heading mb-3">
+                            <h4>{{ block.settings.title }}</h4>
+                            </div>
+                            <div class="links">
+                                {% assign links = block.settings.footer_menu %}
+                                <ul class="list-unstyled">
+                                    {% for link in links %}
+                                        <li>
+                                            <a href="{{ link.url }}">{{ link.title }}</a>
+                                        </li>
+                                        {% else %}
+                                            {% for i in (1..4) %}
+                                                <li>Link {{ forloop.index }}</li>
+                                            {% endfor %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                         </div>
                         {% when 'info' %}  
-
+                            <div class="footer-info">
+                                <div class="link-heading mb-3">
+                            <h4>{{ block.settings.title }}</h4>
+                            </div>
+                            <div class="info">
+                                {{ block.settings.html }}
+                            </div>
+                            {% if block.settings.payment_methods != blank %}
+                                <div class="payment-methods">
+                                    {{ block.settings.payment_methods |  image_url: width: 250 |  image_tag  }}
+                                </div>
+                            {% endif %}
+                            </div>
                         {% else %}
                             
                     {% endcase %}
