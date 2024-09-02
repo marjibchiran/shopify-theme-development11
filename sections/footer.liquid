@@ -58,7 +58,7 @@
                                 {{ block.settings.html }}
                             </div>
                             {% if block.settings.payment_methods != blank %}
-                                <div class="payment-methods mt-2">
+                                <div class="payment-methods">
                                     {{ block.settings.payment_methods |  image_url: width: 200 |  image_tag  }}
                                 </div>
                             {% endif %}
@@ -70,6 +70,11 @@
              {% endfor %}   
         </div>
     </div>
+</div>
+<div class="footer-bottom">
+<div class="d-flex justify-content-center align-items-center">
+    <p class="m-0">{{ section.settings.copyright }}</p>
+</div>
 </div>
 </div>
 
@@ -100,6 +105,12 @@
                 }
             ],
             "default": "3"
+        },
+        {
+            "type": "liquid",
+            "id": "copyright",
+            "label": "Copyright Text",
+            "default": "&copy; {{ shop.name }} | All rights reserved!"
         }
         ],
         "blocks": [
