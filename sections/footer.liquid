@@ -12,6 +12,7 @@
   endif
 %}
 
+
 <div class="footer-section">
 <div class="footer-main pt-5 pb-3">
     <div class="container">
@@ -20,11 +21,18 @@
                 <div class="{{- col -}}">
                     {% case block.type %}
                         {% when 'brand_info' %}
-
+                            <div class="brand-info">
+                                <a href="{{ shop.url }}"></a>
+                                {% if block.settings.image != blank %}
+                                    {{ block.settings.image |  image_url: width: 200 |  image_tag }}
+                                    {% else %}
+                                      <span class="h3">{{ shop.name }}</span>  
+                                {% endif %}
+                            </div>
                         {% when 'menu' %}    
                          
                         {% when 'info' %}  
-                             
+
                         {% else %}
                             
                     {% endcase %}
