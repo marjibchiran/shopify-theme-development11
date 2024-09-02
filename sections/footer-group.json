@@ -40,8 +40,7 @@
           "type": "info",
           "settings": {
             "title": "Footer Menu",
-            "html": "Text Field and Support HTML",
-            "payment_methods": "shopify:\/\/shop_images\/t.png"
+            "html": "Text Field and Support HTML"
           }
         }
       },
