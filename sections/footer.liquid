@@ -1,99 +1,102 @@
+
 {% liquid
-  if section.settings.column == '2'
+   if section.settings.column == '2'
     assign col = 'col-md-6'
-  elsif section.settings.column == '3'
+    elsif section.settings.column == '3'
     assign col = 'col-md-4'
-  elsif section.settings.column == '4'
+    elsif section.settings.column == '4'
     assign col = 'col-md-3'
-  elsif section.settings.column == '6'
+    elsif section.settings.column == '6'
     assign col = 'col-md-2'
-  else
+    else 
     assign col = 'col'
-  endif
+   endif
 %}
-
-
 <div class="footer-section">
-<div class="footer-main pt-5 pb-3">
-    <div class="container">
-        <div class="row">
-             {% for block in section.blocks %}
-                <div class="{{- col -}}">
-                    {% case block.type %}
-                        {% when 'brand_info' %}
+    {% if section.blocks.size > 0 %}
+    <div class="footer-main pt-5 pb-3">
+        <div class="container">
+            <div class="row">
+                {% for block in section.blocks %}
+                   {% case block.type %}
+                    {% when 'brand_info' %}
+                        <div class="{{- col -}}">
                             <div class="brand-info">
                                 <a href="{{ shop.url }}">
-                                {% if block.settings.image != blank %}
-                                    {{ block.settings.image |  image_url: width: 200 |  image_tag }}
+                                    {% if block.settings.image != blank %}
+                                        {{ block.settings.image |  image_url: width: 200 |  image_tag  }}
                                     {% else %}
-                                      <span class="h3">{{ shop.name }}</span>  
-                                {% endif %}
+                                        <span class="h3">{{ shop.name }}</span>
+                                    {% endif %}
                                 </a>
                                 <div class="rte mt-3">
-                                {{ block.settings.rte }}
+                                    {{ block.settings.rte }}
                                 </div>
                             </div>
-                        {% when 'menu' %}    
-                         <div class="footer-links">
-                            <div class="link-heading mb-3">
-                            <h4>{{ block.settings.title }}</h4>
-                            </div>
-                            <div class="links">
-                                {% assign links = block.settings.footer_menu %}
-                                <ul class="list-unstyled">
-                                    {% for link in links %}
-                                        <li>
-                                            <a href="{{ link.url }}">{{ link.title }}</a>
-                                        </li>
+                        </div>
+                    {% when 'menu' %}
+                        <div class="{{- col -}}">
+                            <div class="footer-links">
+                                <div class="link-heading mb-3">
+                                    <h4>{{ block.settings.title }}</h4>
+                                </div>
+                                <div class="links">
+                                    {% assign links = block.settings.footer_menu.links %}
+                                    <ul class="list-unstyled">
+                                        {% for link in links %}
+                                            <li>
+                                                <a href="{{ link.url }}">{{ link.title }}</a>
+                                            </li>
                                         {% else %}
                                             {% for i in (1..4) %}
                                                 <li>Link {{ forloop.index }}</li>
                                             {% endfor %}
-                                    {% endfor %}
-                                </ul>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
                             </div>
-                         </div>
-                        {% when 'info' %}  
+                        </div>
+                    {% when 'info' %}
+                        <div class="{{- col -}}">
                             <div class="footer-info">
                                 <div class="link-heading mb-3">
-                            <h4>{{ block.settings.title }}</h4>
-                            </div>
-                            <div class="info mb-3">
-                                {{ block.settings.html }}
-                            </div>
-                            {% if block.settings.payment_methods != blank %}
-                                <div class="payment-methods">
-                                    {{ block.settings.payment_methods |  image_url: width: 200 |  image_tag  }}
+                                    <h4>{{ block.settings.title }}</h4>
                                 </div>
-                            {% endif %}
-                            </div>
-                        {% else %}
-                            
+                                <div class="info">
+                                    {{ block.settings.html }}
+                                </div>
+                                {% if block.settings.payment_methods != blank %}
+                                    <div class="payment-methods">
+                                        {{ block.settings.payment_methods | image_url: width: 250 |  image_tag }}
+                                    </div>
+                                {% endif %}
+                            </div>   
+                        </div>                             
                     {% endcase %}
-                </div>
-             {% endfor %}   
+                {% endfor %}
+            </div>
         </div>
     </div>
-</div>
-<div class="footer-bottom">
-<div class="d-flex justify-content-center align-items-center">
-    <p class="m-0">{{ section.settings.copyright }}</p>
-</div>
-</div>
+    {% endif %}
+    <div class="footer-bottom py-3">
+       <div class="d-flex justify-content-center align-items-center">
+        <p class="m-0">{{ section.settings.copyright }}</p>
+       </div>
+    </div>
 </div>
 
 {% schema %}
 {
-    "name": "Footer Menu",
+    "name": "Footer menu",
     "settings": [
         {
             "type": "select",
             "id": "column",
-            "label": "Select column",
+            "label": "Column per row",
             "options": [
                 {
                     "label": "2 column",
-                    "value": "6"
+                    "value": "2"
                 },
                 {
                     "label": "3 column",
@@ -105,7 +108,7 @@
                 },
                 {
                     "label": "6 column",
-                    "value": "2"
+                    "value": "6"
                 }
             ],
             "default": "3"
@@ -115,68 +118,66 @@
             "id": "copyright",
             "label": "Copyright Text",
             "default": "&copy; {{ shop.name }} | All rights reserved!"
+        } 
+    ],
+    "blocks": [
+        {
+            "type": "brand_info",
+            "name": "Brand info",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image/Logo"
+                },
+                {
+                    "type": "richtext",
+                    "id": "rte",
+                    "label": "Text",
+                    "default": "<p>A details about your brand!</p>"
+                }
+            ]
+        },
+        {
+            "type": "menu",
+            "name": "Menu",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Menu Heading",
+                    "default": "Footer Menu"
+                },
+                {
+                    "type": "link_list",
+                    "id": "footer_menu",
+                    "label": "Footer Menu"
+                }
+            ]
+        },
+        {
+            "type": "info",
+            "name": "Info",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Menu Heading",
+                    "default": "Footer Menu"
+                },
+                {
+                    "type": "html",
+                    "id": "html",
+                    "label": "Text",
+                    "default": "You can write your text here. This field also support html"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "payment_methods",
+                    "label": "Payment Method icons"
+                }
+            ]
         }
-        ],
-        "blocks": [
-            {
-                "type": "brand_info",
-                "name": "Brand info",
-                "settings": [
-                    {
-                        "type": "image_picker",
-                        "id": "image",
-                        "label": "Image for Logo"
-                    },
-                    {
-                        "type": "richtext",
-                        "id": "rte",
-                        "label": "Text",
-                        "default": "<p>Details About Brands</p>"
-                    }
-                ]
-            },
-            {
-                "type": "menu",
-                "name": "Footer Menu",
-                "settings": [
-                    {
-                        "type": "text",
-                        "id": "title",
-                        "label": "Menu Heading",
-                        "default": "Footer Menu"
-                    },
-                    {
-                        "type": "link_list",
-                        "id": "footer_menu",
-                        "label": "Footer Menu"
-                    }
-                ]
-            },
-            {
-                "type": "info",
-                "name": "Footer Info",
-                "settings": [
-                    {
-                        "type": "text",
-                        "id": "title",
-                        "label": "Menu Heading",
-                        "default": "Footer Menu"
-                    },
-                    {
-                        "type": "html",
-                        "id": "html",
-                        "label": "Text",
-                        "default": "Text Field and Support HTML"
-                    },
-                    {
-                        "type": "image_picker",
-                        "id": "payment_methods",
-                        "label": "Payment Method Icons"
-
-                    }
-
-                ]
-            }
-        ]
+    ]
 }
 {% endschema %}
