@@ -16,12 +16,25 @@
       "settings": {
         "title": "Subscribe to our emails",
         "rte": "<p>Are you ready to subscribe?<\/p>",
-        "bg_color": "#DDDDDD"
+        "bg_color": "#dddddd"
       }
     },
     "footer": {
       "type": "footer",
+      "blocks": {
+        "brand_info_ErgFCJ": {
+          "type": "brand_info",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/t.png",
+            "rte": "<p>Details About Brands<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "brand_info_ErgFCJ"
+      ],
       "settings": {
+        "column": "3"
       }
     }
   },
