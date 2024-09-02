@@ -22,12 +22,16 @@
                     {% case block.type %}
                         {% when 'brand_info' %}
                             <div class="brand-info">
-                                <a href="{{ shop.url }}"></a>
+                                <a href="{{ shop.url }}">
                                 {% if block.settings.image != blank %}
                                     {{ block.settings.image |  image_url: width: 200 |  image_tag }}
                                     {% else %}
                                       <span class="h3">{{ shop.name }}</span>  
                                 {% endif %}
+                                </a>
+                                <div class="rte mt-3">
+                                {{ block.settings.rte }}
+                                </div>
                             </div>
                         {% when 'menu' %}    
                          <div class="footer-links">
