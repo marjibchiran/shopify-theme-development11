@@ -35,11 +35,20 @@
             "title": "Footer Menu",
             "footer_menu": "footer"
           }
+        },
+        "info_Yw7tQF": {
+          "type": "info",
+          "settings": {
+            "title": "Footer Menu",
+            "html": "Text Field and Support HTML",
+            "payment_methods": "shopify:\/\/shop_images\/t.png"
+          }
         }
       },
       "block_order": [
         "brand_info_ErgFCJ",
-        "menu_fGhEb3"
+        "menu_fGhEb3",
+        "info_Yw7tQF"
       ],
       "settings": {
         "column": "3"
