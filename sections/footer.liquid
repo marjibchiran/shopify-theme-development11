@@ -1,12 +1,129 @@
+{% liquid
+  if section.settings.column == '2'
+    assign col = 'col-md-6'
+  elsif section.settings.column == '3'
+    assign col = 'col-md-4'
+  elsif section.settings.column == '4'
+    assign col = 'col-md-3'
+  elsif section.settings.column == '6'
+    assign col = 'col-md-2'
+  else
+    assign col = 'col'
+  endif
+%}
+
 <div class="footer-section">
-<h2>This is footer (section)</h2>
+<div class="footer-main pt-5 pb-3">
+    <div class="container">
+        <div class="row">
+             {% for block in section.blocks %}
+                <div class="{{- col -}}">
+                    {% case block.type %}
+                        {% when 'brand_info' %}
+
+                        {% when 'menu' %}    
+                         
+                        {% when 'info' %}  
+                             
+                        {% else %}
+                            
+                    {% endcase %}
+                </div>
+             {% endfor %}   
+        </div>
+    </div>
+</div>
 </div>
 
 {% schema %}
 {
     "name": "Footer Menu",
     "settings": [
-        
+        {
+            "type": "select",
+            "id": "column",
+            "label": "Select column",
+            "options": [
+                {
+                    "label": "2 column",
+                    "value": "6"
+                },
+                {
+                    "label": "3 column",
+                    "value": "3"
+                },
+                {
+                    "label": "4 column",
+                    "value": "4"
+                },
+                {
+                    "label": "6 column",
+                    "value": "2"
+                }
+            ],
+            "default": "3"
+        }
+        ],
+        "blocks": [
+            {
+                "type": "brand_info",
+                "name": "Brand info",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "image",
+                        "label": "Image for Logo"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "rte",
+                        "label": "Text",
+                        "default": "<p>Details About Brands</p>"
+                    }
+                ]
+            },
+            {
+                "type": "menu",
+                "name": "Footer Menu",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "title",
+                        "label": "Menu Heading",
+                        "default": "Footer Menu"
+                    },
+                    {
+                        "type": "link_list",
+                        "id": "footer_menu",
+                        "label": "Footer Menu"
+                    }
+                ]
+            },
+            {
+                "type": "info",
+                "name": "Footer Info",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "title",
+                        "label": "Menu Heading",
+                        "default": "Footer Menu"
+                    },
+                    {
+                        "type": "html",
+                        "id": "html",
+                        "label": "Text",
+                        "default": "Text Field and Support HTML"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "payment_methods",
+                        "label": "Payment Method Icons"
+
+                    }
+
+                ]
+            }
         ]
 }
 {% endschema %}
