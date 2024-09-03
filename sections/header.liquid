@@ -15,7 +15,21 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 {% for link in section.settings.menu.links %}
                 <li class="nav-item{% if link.links.size > 0 %} dropdown{% endif %}">
-                    <a class="nav-link{% if link.links.size > 0 %} dropdown-toggle{% endif %}" aria-current="page" href="{{ link.url }}"{% if link.links.size > 0 %} data-bs-toggle="dropdown" aria-expanded="false"{% endif %}>{{ link.title }}</a>
+                    <a class="nav-link{% if link.links.size > 0 %} dropdown-toggle mega-menu-items{% endif %}" aria-current="page" href="{{ link.url }}"{% if link.links.size > 0 %} data-bs-toggle="dropdown" aria-expanded="false"{% endif %}>{{ link.title }}</a>
+                        
+                        {% if link.links.size > 0 %}
+                            <div class="mega-submenu">
+                                <div class="container mega-inner py-4">
+                                    <div class="row">
+                                        <div class="col-md-4">Link 1</div>
+                                        <div class="col-md-4">Link 2</div>
+                                        <div class="col-md-4">Link 3</div>
+                                        <div class="col-md-4">Link 4</div>
+                                        <div class="col-md-4">Link 5</div>
+                                    </div>
+                                </div>
+                            </div>   
+                        {% endif %}
                         {% comment %} {% if link.links.size > 0 %}
                             <ul class="dropdown-menu">
                                 {% for child in link.links %}
@@ -23,6 +37,7 @@
                                 {% endfor %}
                             </ul>
                         {% endif %} {% endcomment %}
+
                 </li>
                 {% endfor %}
             </ul>
