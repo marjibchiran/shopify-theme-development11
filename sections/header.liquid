@@ -15,7 +15,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 {% for link in section.settings.menu.links %}
                 <li class="nav-item{% if link.links.size > 0 %} dropdown{% endif %}">
-                    <a class="nav-link{% if link.links.size > 0 %} dropdown-toggle mega-menu-items{% endif %}" aria-current="page" href="{{ link.url }}"{% if link.links.size > 0 %} data-bs-toggle="dropdown" aria-expanded="false"{% endif %}>{{ link.title }}</a>
+                    <a class="nav-link{% if link.links.size > 0 %} dropdown-toggle {% if section.settings.mega-menu %} mega-menu-items {% endif %} {% endif %}" aria-current="page" href="{{ link.url }}"{% if link.links.size > 0 %} data-bs-toggle="dropdown" aria-expanded="false"{% endif %}>{{ link.title }}</a>
                         
                         {% if link.links.size > 0 %}
                             <div class="mega-submenu">
@@ -123,6 +123,12 @@
             "type": "link_list",
             "id": "menu",
             "label": "Menu"
+        },
+        {
+            "type": "checkbox",
+            "id": "mega-menu",
+            "label": "Enable Mega Menu",
+            "default": false
         }
     ]
 }
