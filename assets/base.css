@@ -10,7 +10,19 @@ html{
     }
 
 /* Mega Menu Section*/
+.mega-submenu{
+    display: none;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    top: auto;
+    right: 0;
+    background-color: white;
 
+}
+.mega-menu-items:hover, .mega-submenu, .mega-submenu:hover {
+    display: block;
+}
 
 
     /*Hero Banner Section*/
