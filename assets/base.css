@@ -20,7 +20,7 @@ html{
     background-color: white;
 
 }
-.mega-menu-items:hover, .mega-submenu, .mega-submenu:hover {
+.mega-menu-items:hover + .mega-submenu, .mega-submenu:hover {
     display: block;
 }
 
