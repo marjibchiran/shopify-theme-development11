@@ -16,13 +16,13 @@
                 {% for link in section.settings.menu.links %}
                 <li class="nav-item{% if link.links.size > 0 %} dropdown{% endif %}">
                     <a class="nav-link{% if link.links.size > 0 %} dropdown-toggle{% endif %}" aria-current="page" href="{{ link.url }}"{% if link.links.size > 0 %} data-bs-toggle="dropdown" aria-expanded="false"{% endif %}>{{ link.title }}</a>
-                        {% if link.links.size > 0 %}
+                        {% comment %} {% if link.links.size > 0 %}
                             <ul class="dropdown-menu">
                                 {% for child in link.links %}
                                     <li><a class="dropdown-item" href="{{ child.url }}">{{ child.title }}</a></li>
                                 {% endfor %}
                             </ul>
-                        {% endif %}
+                        {% endif %} {% endcomment %}
                 </li>
                 {% endfor %}
             </ul>
@@ -30,9 +30,9 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
                 </svg>
-            </span>  
-
-           {% comment %} Customer Account Start {% endcomment %}
+            </span> 
+            
+            {% comment %} Customer Account Start {% endcomment %}
             {% if shop.customer_accounts_enabled %}
                 <div class="customer-account mx-2">
                 <a href="{{ routes.account_url }}">
@@ -43,7 +43,6 @@
             </div>
              {% endif %}
             {% comment %} Customer Account End {% endcomment %}
-                  
             <div class="header-cart-count mx-2">
                 <a href="{% if settings.cart_type == 'drawer' %}#offcanvasRight{% else %}{{ routes.cart_url }}{% endif %}" class="cart_link"{% if settings.cart_type == 'drawer' %} type="button" data-bs-toggle="offcanvas" aria-controls="offcanvasRight"{% endif %}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
@@ -71,7 +70,7 @@
                     <div class="form-field d-flex align-items-center">
                         <input type="search"
                             name="q"
-                            id="Search"
+                            id="search"
                             value="{{ search.terms | escape }}"
                             area-expanded="false"
                             area-owns="predictive-search-results"
