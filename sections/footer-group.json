@@ -15,7 +15,7 @@
       "type": "sub-footer",
       "settings": {
         "title": "Subscribe to our emails",
-        "rte": "<p>Are you ready to subscribe?<\/p>",
+        "rte": "<p>Are you ready to subscribe?</p>",
         "bg_color": "#dddddd"
       }
     },
@@ -25,8 +25,8 @@
         "brand_info_ErgFCJ": {
           "type": "brand_info",
           "settings": {
-            "image": "shopify:\/\/shop_images\/t.png",
-            "rte": "<p>Details About Your Brands<\/p>"
+            "image": "shopify://shop_images/t.png",
+            "rte": "<p>Details About Your Brands</p>"
           }
         },
         "menu_fGhEb3": {
@@ -42,15 +42,23 @@
             "title": "Footer Menu",
             "html": "Text Field and Support HTML"
           }
+        },
+        "info_hWELN8": {
+          "type": "info",
+          "settings": {
+            "title": "Footer Menu",
+            "html": "You can write your text here. This field also support html"
+          }
         }
       },
       "block_order": [
         "brand_info_ErgFCJ",
         "menu_fGhEb3",
-        "info_Yw7tQF"
+        "info_Yw7tQF",
+        "info_hWELN8"
       ],
       "settings": {
-        "column": "3",
+        "column": "4",
         "copyright": "&copy; {{ shop.name }} | All rights reserved!"
       }
     }
