@@ -111,16 +111,7 @@
         "row_PiQYtg": {
           "type": "row",
           "settings": {
-            "caption": "missing translation: \"t:sections.multirow.blocks.row.settings.caption.default\"",
-            "heading": "ROW",
-            "text": "<p>missing translation: \"t:sections.multirow.blocks.row.settings.text.default\"</p>",
-            "button_label": "Buy Now",
-            "button_link": ""
-          }
-        },
-        "row_kDzE7p": {
-          "type": "row",
-          "settings": {
+            "image": "shopify://shop_images/IMG_E5635_600x_0e03e87e-f5f6-4eac-a140-21a1755b8016.jpg",
             "caption": "missing translation: \"t:sections.multirow.blocks.row.settings.caption.default\"",
             "heading": "ROW",
             "text": "<p>missing translation: \"t:sections.multirow.blocks.row.settings.text.default\"</p>",
@@ -131,8 +122,7 @@
       },
       "block_order": [
         "row_7eh63L",
-        "row_PiQYtg",
-        "row_kDzE7p"
+        "row_PiQYtg"
       ],
       "settings": {
         "title": "Multicolumn",
