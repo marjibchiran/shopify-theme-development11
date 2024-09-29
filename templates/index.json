@@ -11,30 +11,13 @@
   "sections": {
     "image_banner": {
       "type": "image-banner",
-      "blocks": {
-        "heading_qx4ADU": {
-          "type": "heading",
-          "settings": {
-            "heading": "Hello Boss",
-            "heading_size": "hxl"
-          }
-        }
-      },
-      "block_order": [
-        "heading_qx4ADU"
-      ],
       "settings": {
-        "image": "shopify://shop_images/rack-of-womens-clothing.jpg",
-        "image_overlay_opacity": 20,
-        "image_height": "small",
-        "desktop_content_position": "middle-left",
-        "show_text_box": true,
-        "desktop_content_alignment": "left",
-        "color_scheme": "",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
+        "image": "shopify://shop_images/browsing-clothing.jpg",
+        "content_width": 60,
+        "heading": "COMFY, COZY, CHIC",
+        "sub-heading": "<p>Sustainable, Yoga clothes, Workout clothes and activewear. Handcrafted in America</p>",
+        "label_1": "SHOP MOST POPULAR STYLES",
+        "url_1": ""
       }
     },
     "featured_collection_Mftzt7": {
