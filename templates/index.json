@@ -18,18 +18,10 @@
             "heading": "Hello Boss",
             "heading_size": "hxl"
           }
-        },
-        "text_PjpKU9": {
-          "type": "text",
-          "settings": {
-            "text": "<p>t:sections.image-banner.blocks.text.settings.text.default</p>",
-            "text_style": "body"
-          }
         }
       },
       "block_order": [
-        "heading_qx4ADU",
-        "text_PjpKU9"
+        "heading_qx4ADU"
       ],
       "settings": {
         "image": "shopify://shop_images/rack-of-womens-clothing.jpg",
