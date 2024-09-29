@@ -93,6 +93,65 @@
           "high-rise-compression-full-length-pocket-leggings-copy"
         ]
       }
+    },
+    "multirow_QaaEQG": {
+      "type": "multirow",
+      "blocks": {
+        "row_7eh63L": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/HeatherCharcoalFullLengthPocketLeggings_800x_cdd04a0b-729c-4920-bb57-3d225f4e43f6.jpg",
+            "caption": "missing translation: \"t:sections.multirow.blocks.row.settings.caption.default\"",
+            "heading": "ROW",
+            "text": "<p>missing translation: \"t:sections.multirow.blocks.row.settings.text.default\"</p>",
+            "button_label": "missing translation: \"t:sections.multirow.blocks.row.settings.button_label.default\"",
+            "button_link": ""
+          }
+        },
+        "row_PiQYtg": {
+          "type": "row",
+          "settings": {
+            "caption": "missing translation: \"t:sections.multirow.blocks.row.settings.caption.default\"",
+            "heading": "missing translation: \"t:sections.multirow.blocks.row.settings.heading.default\"",
+            "text": "<p>missing translation: \"t:sections.multirow.blocks.row.settings.text.default\"</p>",
+            "button_label": "missing translation: \"t:sections.multirow.blocks.row.settings.button_label.default\"",
+            "button_link": ""
+          }
+        },
+        "row_kDzE7p": {
+          "type": "row",
+          "settings": {
+            "caption": "missing translation: \"t:sections.multirow.blocks.row.settings.caption.default\"",
+            "heading": "missing translation: \"t:sections.multirow.blocks.row.settings.heading.default\"",
+            "text": "<p>missing translation: \"t:sections.multirow.blocks.row.settings.text.default\"</p>",
+            "button_label": "missing translation: \"t:sections.multirow.blocks.row.settings.button_label.default\"",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "row_7eh63L",
+        "row_PiQYtg",
+        "row_kDzE7p"
+      ],
+      "settings": {
+        "title": "Multicolumn",
+        "subtitle": "Subtitle",
+        "column_alignment_title": "left",
+        "image_height": "medium",
+        "desktop_image_width": "medium",
+        "heading_size": "h1",
+        "text_style": "body",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "image_layout": "alternate-left",
+        "section_color_scheme": "",
+        "row_color_scheme": "",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -100,6 +159,7 @@
     "featured_collection_Mftzt7",
     "multicolumn_eJVKDd",
     "recently_viewed_D9HcxR",
-    "custom_product_slider_featured_GCEAzL"
+    "custom_product_slider_featured_GCEAzL",
+    "multirow_QaaEQG"
   ]
 }
