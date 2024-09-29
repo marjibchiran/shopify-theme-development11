@@ -137,7 +137,7 @@
       "settings": {
         "title": "Multicolumn",
         "subtitle": "Subtitle",
-        "column_alignment_title": "left",
+        "column_alignment_title": "center",
         "image_height": "medium",
         "desktop_image_width": "medium",
         "heading_size": "h1",
