@@ -24,12 +24,12 @@
         "heading_qx4ADU"
       ],
       "settings": {
-        "image": "shopify://shop_images/hero.jpg",
+        "image": "shopify://shop_images/rack-of-womens-clothing.jpg",
         "image_overlay_opacity": 0,
-        "image_height": "large",
-        "desktop_content_position": "middle-center",
+        "image_height": "small",
+        "desktop_content_position": "middle-left",
         "show_text_box": true,
-        "desktop_content_alignment": "center",
+        "desktop_content_alignment": "left",
         "color_scheme": "",
         "image_behavior": "none",
         "mobile_content_alignment": "center",
