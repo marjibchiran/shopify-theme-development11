@@ -12,10 +12,10 @@
     "image_banner": {
       "type": "image-banner",
       "settings": {
-        "image": "shopify:\/\/shop_images\/hero.jpg",
+        "image": "shopify://shop_images/hero.jpg",
         "content_width": 60,
         "heading": "COMFY, COZY, CHIC",
-        "sub-heading": "<p>Sustainable, Yoga clothes, Workout clothes and activewear. Handcrafted in America<\/p>",
+        "sub-heading": "<p>Sustainable, Yoga clothes, Workout clothes and activewear. Handcrafted in America</p>",
         "label_1": "SHOP MOST POPULAR STYLES",
         "url_1": ""
       }
@@ -34,29 +34,33 @@
         "column_eEVXYJ": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/HeatherCharcoalFullLengthPocketLeggings_800x_cdd04a0b-729c-4920-bb57-3d225f4e43f6.jpg",
             "title": "Column title",
-            "rte": "<p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, facilis sit amet!<\/p>"
+            "rte": "<p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, facilis sit amet!</p>"
           }
         },
         "column_PxnTt8": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/IMG_E5635_600x_0e03e87e-f5f6-4eac-a140-21a1755b8016.jpg",
             "title": "Column title",
-            "rte": "<p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, facilis sit amet!<\/p>"
+            "rte": "<p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, facilis sit amet!</p>"
           }
         },
         "column_DxRM3D": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/HeatherCharcoalFullLengthPocketLeggings_800x_cdd04a0b-729c-4920-bb57-3d225f4e43f6.jpg",
             "title": "Column title",
-            "rte": "<p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, facilis sit amet!<\/p>"
+            "rte": "<p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, facilis sit amet!</p>"
           }
         },
         "column_qUgTVz": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/IMG_E5635_600x_0e03e87e-f5f6-4eac-a140-21a1755b8016.jpg",
             "title": "Column title",
-            "rte": "<p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, facilis sit amet!<\/p>"
+            "rte": "<p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, facilis sit amet!</p>"
           }
         }
       },
