@@ -24,7 +24,7 @@
     {% for block in section.blocks %}
       {%- if block.type == 'product' -%}
         <a href="{{ block.settings.product.url }}" class="card">
-          {{ block.settings.product.featured_image | image_url: width: 1000 | image_tag -}}
+          {{ block.settings.product.featured_image | image_url: width: 1000 | image_tag: 'class=card_image' }}
 
           <p>{{ block.settings.title | default: block.settings.product.title }}</p>
         </a>
