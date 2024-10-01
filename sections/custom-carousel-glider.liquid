@@ -11,6 +11,11 @@
 </div>
 
 <script src="{{ 'glider.min.js' |  asset_url }}" async></script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    new Glider(document.querySelector('.glider'));
+  });
+</script>
 {% schema %}
 {
   "name": "Custom Carousel Glider",
