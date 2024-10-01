@@ -97,6 +97,7 @@
     "custom_carousel_glider_x8EDrR": {
       "type": "custom-carousel-glider",
       "settings": {
+        "number_slider_desktop": 4
       }
     }
   },
