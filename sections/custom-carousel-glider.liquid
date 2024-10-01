@@ -1,14 +1,26 @@
 {{ 'glider.min.css' | asset_url | stylesheet_tag }}
 
+<style>
+  .card {
+    border: 1px solid #333333;
+  }
+  .card_image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: contain;
+  }
+</style>
+
 <h1>Custom Carousel Glider</h1>
 <div class="page-width" id="{{ section.id }}">
   <div class="glider">
     {% for block in section.blocks %}
       {%- if block.type == 'product' -%}
-        <div class="card">
+        <a href="{{ block.settings.product.url }}" class="card card_image">
           {{ block.settings.product.featured_image | image_url: width: 1000 | image_tag }}
-        </div>
-        <p>{{ block.settings.product.title }}</p>
+          <p>{{ block.settings.title | default: block.settings.product.title }}</p>
+        </a>
       {%- endif -%}
     {% endfor %}
   </div>
