@@ -14,8 +14,12 @@
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     new Glider(document.querySelector('.glider'), {
-
-               });
+      arrows: {
+        prev: 'CSS Selector',
+        // may also pass element directly
+        next: document.querySelector('CSS Selector'),
+      },
+    });
   });
 </script>
 {% schema %}
