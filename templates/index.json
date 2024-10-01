@@ -93,6 +93,11 @@
           "high-rise-compression-full-length-pocket-leggings-copy"
         ]
       }
+    },
+    "custom_carousel_glider_x8EDrR": {
+      "type": "custom-carousel-glider",
+      "settings": {
+      }
     }
   },
   "order": [
@@ -100,6 +105,7 @@
     "featured_collection_Mftzt7",
     "multicolumn_eJVKDd",
     "recently_viewed_D9HcxR",
-    "custom_product_slider_featured_GCEAzL"
+    "custom_product_slider_featured_GCEAzL",
+    "custom_carousel_glider_x8EDrR"
   ]
 }
