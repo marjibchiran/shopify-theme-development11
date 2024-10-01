@@ -1,3 +1,5 @@
+{{ 'glider.min.css' | asset_url | stylesheet_tag }}
+
 <style>
   .card {
     border: 1px solid #333333;
@@ -28,6 +30,7 @@
   <button class="next">Next</button>
 </div>
 
+<script src="{{ 'glider.min.js' |  asset_url }}" async></script>
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     new Glider(document.querySelector('.glider'), {
