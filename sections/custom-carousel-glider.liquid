@@ -3,12 +3,11 @@
 <h1>Custom Carousel Glider</h1>
 <div class="page-width" id="{{ section.id }}">
   <div class="glider">
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-    <div>5</div>
-    <div>6</div>
+    {% for block in section.blocks %}
+      {%- if block.type == 'product' -%}
+        <p>{{ block.settings.product.title }}</p>
+      {%- endif -%}
+    {% endfor %}
   </div>
   <button class="prev">Prev</button>
   <button class="next">Next</button>
@@ -29,7 +28,32 @@
 {% schema %}
 {
   "name": "Custom Carousel Glider",
-  "settings": [],
+  "settings": [
+    {
+      "type": "number",
+      "id": "number_slider_desktop",
+      "label": "Number of Slider (Desktop)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "label": "Product",
+          "id": "product"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "info": "Optional. will use the product title if left blank"
+        }
+      ]
+    }
+  ],
   "presets": [
     {
       "name": "Custom Carousel Glider"
