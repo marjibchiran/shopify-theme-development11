@@ -96,6 +96,34 @@
     },
     "custom_carousel_glider_x8EDrR": {
       "type": "custom-carousel-glider",
+      "blocks": {
+        "product_pYQ3d8": {
+          "type": "product",
+          "settings": {
+            "product": "high-rise-compression-leggings",
+            "title": ""
+          }
+        },
+        "product_8aNQ8A": {
+          "type": "product",
+          "settings": {
+            "product": "high-rise-compression-leggings",
+            "title": ""
+          }
+        },
+        "product_kwAKrh": {
+          "type": "product",
+          "settings": {
+            "product": "high-rise-compression-leggings",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_pYQ3d8",
+        "product_8aNQ8A",
+        "product_kwAKrh"
+      ],
       "settings": {
         "number_slider_desktop": 4
       }
