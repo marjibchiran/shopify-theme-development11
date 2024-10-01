@@ -6,7 +6,7 @@
 .glider,
 .glider-track {
   transform: translateZ(0);
-  gap: 20px;
+  gap: 10px;
 }
 .glider-dot,
 .glider-next,
