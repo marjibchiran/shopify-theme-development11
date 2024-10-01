@@ -18,7 +18,7 @@
     {% for block in section.blocks %}
       {%- if block.type == 'product' -%}
         <a href="{{ block.settings.product.url }}" class="card">
-          {{ block.settings.product.featured_image | image_url: width: 1000 | image_tag: 'class=card_image' }}
+          {{ block.settings.product.featured_image | image_url: width: 1000 | image_tag }}
           <p>{{ block.settings.title | default: block.settings.product.title }}</p>
         </a>
       {%- endif -%}
@@ -32,15 +32,15 @@
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     new Glider(document.querySelector('.glider'), {
-      slidesToShow: {{ section.settings.number_slider_desktop | default: 1 }},
+      slidesToShow: {{ section.settings.number_slider_desktop }},
       arrows: {
-        prev: document.querySelector('#{{ section.id }} .prev'),
-        next: document.querySelector('#{{ section.id }} .next'),
+        prev: '#{{ section.id }}.prev',
+        // may also pass element directly
+        next: '#{{ section.id }}.next',
       },
     });
   });
 </script>
-
 {% schema %}
 {
   "name": "Custom Carousel Glider",
