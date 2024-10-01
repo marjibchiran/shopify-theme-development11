@@ -1,3 +1,16 @@
+{{ 'glider.min.css' | asset_url | stylesheet_tag }}
+
+<h1>Custom Carousel Glider</h1>
+<div class="glider">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>
+</div>
+
+<script src="{{ 'glider.min.js' |  asset_url }}" async></script>
 {% schema %}
 {
   "name": "Custom Carousel Glider",
