@@ -19,9 +19,8 @@
   window.addEventListener('DOMContentLoaded', () => {
     new Glider(document.querySelector('.glider'), {
       arrows: {
-        prev: '#{{ section.id }}.prev',
-        // may also pass element directly
-        next: '#{{ section.id }}.next',
+        prev: document.querySelector(`#{{ section.id }} .prev`),
+        next: document.querySelector(`#{{ section.id }} .next`),
       },
     });
   });
