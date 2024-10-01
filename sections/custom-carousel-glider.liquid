@@ -36,9 +36,8 @@
     new Glider(document.querySelector('.glider'), {
       slidesToShow: {{ section.settings.number_slider_desktop }},
       arrows: {
-        prev: '#{{ section.id }}.prev',
-        // may also pass element directly
-        next: '#{{ section.id }}.next',
+        prev: document.querySelector('#{{ section.id }} .prev'),
+        next: document.querySelector('#{{ section.id }} .next'),
       },
     });
   });
