@@ -71,63 +71,14 @@
     },
     "recently_viewed_CcHxWy": {
       "type": "recently-viewed",
+      "disabled": true,
       "settings": {
-      }
-    },
-    "multirow_yXq74F": {
-      "type": "multirow",
-      "blocks": {
-        "row_tFQpXG": {
-          "type": "row",
-          "settings": {
-            "image": "shopify://shop_images/HeatherCharcoalFullLengthPocketLeggings_800x_cdd04a0b-729c-4920-bb57-3d225f4e43f6.jpg",
-            "caption": "Best Selling",
-            "heading": "Add your title",
-            "text": "<p>This is description</p>",
-            "button_label": "Buy Now",
-            "button_link": ""
-          }
-        },
-        "row_r8RDfL": {
-          "type": "row",
-          "settings": {
-            "image": "shopify://shop_images/HeatherCharcoalFullLengthPocketLeggings_800x_cdd04a0b-729c-4920-bb57-3d225f4e43f6.jpg",
-            "caption": "Best Selling",
-            "heading": "Add your title",
-            "text": "<p>This is description</p>",
-            "button_label": "missing translation: \"t:sections.multirow.blocks.row.settings.button_label.default\"",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "row_tFQpXG",
-        "row_r8RDfL"
-      ],
-      "settings": {
-        "title": "Multicolumn",
-        "subtitle": "Subtitle",
-        "column_alignment_title": "center",
-        "image_height": "medium",
-        "desktop_image_width": "medium",
-        "heading_size": "h1",
-        "text_style": "body",
-        "button_style": "secondary",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "center",
-        "image_layout": "align-left",
-        "section_color_scheme": "",
-        "row_color_scheme": "",
-        "mobile_content_alignment": "center",
-        "padding_top": 36,
-        "padding_bottom": 36
       }
     }
   },
   "order": [
     "main-product",
     "recommended-product",
-    "recently_viewed_CcHxWy",
-    "multirow_yXq74F"
+    "recently_viewed_CcHxWy"
   ]
 }
