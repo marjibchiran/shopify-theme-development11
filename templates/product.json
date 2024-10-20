@@ -84,26 +84,28 @@
             "caption": "Best Selling",
             "heading": "Add your title",
             "text": "<p>This is description</p>",
+            "button_label": "Buy Now",
+            "button_link": ""
+          }
+        },
+        "row_r8RDfL": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/HeatherCharcoalFullLengthPocketLeggings_800x_cdd04a0b-729c-4920-bb57-3d225f4e43f6.jpg",
+            "caption": "Best Selling",
+            "heading": "Add your title",
+            "text": "<p>This is description</p>",
             "button_label": "missing translation: \"t:sections.multirow.blocks.row.settings.button_label.default\"",
             "button_link": ""
           }
         },
-        "row_WtJqFa": {
+        "row_jd9Gdj": {
           "type": "row",
           "settings": {
-            "caption": "missing translation: \"t:sections.multirow.blocks.row.settings.caption.default\"",
-            "heading": "missing translation: \"t:sections.multirow.blocks.row.settings.heading.default\"",
-            "text": "<p>missing translation: \"t:sections.multirow.blocks.row.settings.text.default\"</p>",
-            "button_label": "missing translation: \"t:sections.multirow.blocks.row.settings.button_label.default\"",
-            "button_link": ""
-          }
-        },
-        "row_xBXb3g": {
-          "type": "row",
-          "settings": {
-            "caption": "missing translation: \"t:sections.multirow.blocks.row.settings.caption.default\"",
-            "heading": "missing translation: \"t:sections.multirow.blocks.row.settings.heading.default\"",
-            "text": "<p>missing translation: \"t:sections.multirow.blocks.row.settings.text.default\"</p>",
+            "image": "shopify://shop_images/HeatherCharcoalFullLengthPocketLeggings_800x_cdd04a0b-729c-4920-bb57-3d225f4e43f6.jpg",
+            "caption": "Best Selling",
+            "heading": "Add your title",
+            "text": "<p>This is description</p>",
             "button_label": "missing translation: \"t:sections.multirow.blocks.row.settings.button_label.default\"",
             "button_link": ""
           }
@@ -111,8 +113,8 @@
       },
       "block_order": [
         "row_tFQpXG",
-        "row_WtJqFa",
-        "row_xBXb3g"
+        "row_r8RDfL",
+        "row_jd9Gdj"
       ],
       "settings": {
         "title": "Multicolumn",
@@ -124,7 +126,7 @@
         "text_style": "body",
         "button_style": "secondary",
         "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
+        "desktop_content_alignment": "center",
         "image_layout": "alternate-left",
         "section_color_scheme": "",
         "row_color_scheme": "",
