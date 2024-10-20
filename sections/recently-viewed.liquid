@@ -13,7 +13,7 @@
             const currentProductData = {
                 productId: "{{ product.id }}",
                 title: "{{ product.title }}",
-                image: "{{ product.featured_image | image_url: '300x200' | image_tag }}",
+                image: "{{ product.featured_image | image_url: '300x200' }}",
                 price: "{{ product.price |  money }}",
                 url: "{{ product.url }}"
             }
@@ -50,7 +50,7 @@
                 <div class="col-md-3">
                     <div class="card my-2">
                         <div class="card-body">
-                            <img src="${product.image}" alt="${product.title}" srcset="${product.image}" width="300" height="200">
+                            <img src="${product.image}" alt="${product.title}" width="300" height="200">
                             <div class="product-info">
                                 <p><strong>${product.title}</strong></p>
                                 <p>Price: ${product.price}</p>
