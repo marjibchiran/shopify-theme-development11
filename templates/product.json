@@ -98,23 +98,11 @@
             "button_label": "missing translation: \"t:sections.multirow.blocks.row.settings.button_label.default\"",
             "button_link": ""
           }
-        },
-        "row_jd9Gdj": {
-          "type": "row",
-          "settings": {
-            "image": "shopify://shop_images/HeatherCharcoalFullLengthPocketLeggings_800x_cdd04a0b-729c-4920-bb57-3d225f4e43f6.jpg",
-            "caption": "Best Selling",
-            "heading": "Add your title",
-            "text": "<p>This is description</p>",
-            "button_label": "missing translation: \"t:sections.multirow.blocks.row.settings.button_label.default\"",
-            "button_link": ""
-          }
         }
       },
       "block_order": [
         "row_tFQpXG",
-        "row_r8RDfL",
-        "row_jd9Gdj"
+        "row_r8RDfL"
       ],
       "settings": {
         "title": "Multicolumn",
