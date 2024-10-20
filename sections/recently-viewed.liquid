@@ -13,7 +13,7 @@
             const currentProductData = {
                 productId: "{{ product.id }}",
                 title: "{{ product.title }}",
-                image: "{{ product.featured_image | image_url: '300x200' | image_tag}}",
+                image: "{{ product.images | image_url: '300x200' | image_tag}}",
                 price: "{{ product.price |  money }}",
                 url: "{{ product.url }}"
             }
