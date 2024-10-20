@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "image_banner": {
@@ -77,6 +77,7 @@
     },
     "recently_viewed_D9HcxR": {
       "type": "recently-viewed",
+      "disabled": true,
       "settings": {
       }
     },
@@ -93,40 +94,6 @@
           "high-rise-compression-full-length-pocket-leggings-copy"
         ]
       }
-    },
-    "custom_carousel_glider_x8EDrR": {
-      "type": "custom-carousel-glider",
-      "blocks": {
-        "product_pYQ3d8": {
-          "type": "product",
-          "settings": {
-            "product": "high-rise-compression-length-pocket-leggings",
-            "title": ""
-          }
-        },
-        "product_8aNQ8A": {
-          "type": "product",
-          "settings": {
-            "product": "high-rise-compression-leggings",
-            "title": ""
-          }
-        },
-        "product_kwAKrh": {
-          "type": "product",
-          "settings": {
-            "product": "heather-spacedye-high-rise-full-length-pocket-leggings-copy-3",
-            "title": ""
-          }
-        }
-      },
-      "block_order": [
-        "product_pYQ3d8",
-        "product_8aNQ8A",
-        "product_kwAKrh"
-      ],
-      "settings": {
-        "number_slider_desktop": 1
-      }
     }
   },
   "order": [
@@ -134,7 +101,6 @@
     "featured_collection_Mftzt7",
     "multicolumn_eJVKDd",
     "recently_viewed_D9HcxR",
-    "custom_product_slider_featured_GCEAzL",
-    "custom_carousel_glider_x8EDrR"
+    "custom_product_slider_featured_GCEAzL"
   ]
 }
