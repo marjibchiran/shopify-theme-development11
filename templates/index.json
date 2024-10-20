@@ -94,12 +94,6 @@
           "high-rise-compression-full-length-pocket-leggings-copy"
         ]
       }
-    },
-    "recommended_products_T9n6Cg": {
-      "type": "recommended-products",
-      "settings": {
-        "limit": 10
-      }
     }
   },
   "order": [
@@ -107,7 +101,6 @@
     "featured_collection_Mftzt7",
     "multicolumn_eJVKDd",
     "recently_viewed_D9HcxR",
-    "custom_product_slider_featured_GCEAzL",
-    "recommended_products_T9n6Cg"
+    "custom_product_slider_featured_GCEAzL"
   ]
 }
