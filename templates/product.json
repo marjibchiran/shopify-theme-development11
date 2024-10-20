@@ -117,7 +117,7 @@
       "settings": {
         "title": "Multicolumn",
         "subtitle": "Subtitle",
-        "column_alignment_title": "left",
+        "column_alignment_title": "center",
         "image_height": "medium",
         "desktop_image_width": "medium",
         "heading_size": "h1",
@@ -128,7 +128,7 @@
         "image_layout": "alternate-left",
         "section_color_scheme": "",
         "row_color_scheme": "",
-        "mobile_content_alignment": "left",
+        "mobile_content_alignment": "center",
         "padding_top": 36,
         "padding_bottom": 36
       }
