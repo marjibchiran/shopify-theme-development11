@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main-product": {
@@ -73,11 +73,70 @@
       "type": "recently-viewed",
       "settings": {
       }
+    },
+    "multirow_yXq74F": {
+      "type": "multirow",
+      "blocks": {
+        "row_tFQpXG": {
+          "type": "row",
+          "settings": {
+            "caption": "missing translation: \"t:sections.multirow.blocks.row.settings.caption.default\"",
+            "heading": "missing translation: \"t:sections.multirow.blocks.row.settings.heading.default\"",
+            "text": "<p>missing translation: \"t:sections.multirow.blocks.row.settings.text.default\"</p>",
+            "button_label": "missing translation: \"t:sections.multirow.blocks.row.settings.button_label.default\"",
+            "button_link": ""
+          }
+        },
+        "row_WtJqFa": {
+          "type": "row",
+          "settings": {
+            "caption": "missing translation: \"t:sections.multirow.blocks.row.settings.caption.default\"",
+            "heading": "missing translation: \"t:sections.multirow.blocks.row.settings.heading.default\"",
+            "text": "<p>missing translation: \"t:sections.multirow.blocks.row.settings.text.default\"</p>",
+            "button_label": "missing translation: \"t:sections.multirow.blocks.row.settings.button_label.default\"",
+            "button_link": ""
+          }
+        },
+        "row_xBXb3g": {
+          "type": "row",
+          "settings": {
+            "caption": "missing translation: \"t:sections.multirow.blocks.row.settings.caption.default\"",
+            "heading": "missing translation: \"t:sections.multirow.blocks.row.settings.heading.default\"",
+            "text": "<p>missing translation: \"t:sections.multirow.blocks.row.settings.text.default\"</p>",
+            "button_label": "missing translation: \"t:sections.multirow.blocks.row.settings.button_label.default\"",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "row_tFQpXG",
+        "row_WtJqFa",
+        "row_xBXb3g"
+      ],
+      "settings": {
+        "title": "Multicolumn",
+        "subtitle": "Subtitle",
+        "column_alignment_title": "left",
+        "image_height": "medium",
+        "desktop_image_width": "medium",
+        "heading_size": "h1",
+        "text_style": "body",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "image_layout": "alternate-left",
+        "section_color_scheme": "",
+        "row_color_scheme": "",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main-product",
     "recommended-product",
-    "recently_viewed_CcHxWy"
+    "recently_viewed_CcHxWy",
+    "multirow_yXq74F"
   ]
 }
