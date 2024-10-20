@@ -13,30 +13,32 @@
             const currentProductData = {
                 productId: "{{ product.id }}",
                 title: "{{ product.title }}",
-                image: "{{ product.featured_image| image_url: '300x200' | image_tag}}",
-                price: "{{ product.price |  money }}",
+                // Check for featured image first, then fallback to the first image in product.images
+                image: "{% if product.featured_image %}{{ product.featured_image | image_url: '300x200' }}{% elsif product.images.size > 0 %}{{ product.images.first | image_url: '300x200' }}{% else %}{{ 'default-image-url.jpg' }}{% endif %}",
+                price: "{{ product.price | money }}",
                 url: "{{ product.url }}"
-            }
+            };
+
             const productArray = [currentProductData];
             const maxProducts = 4;
             const currentproductId = currentProductData.productId;
             const productArrayString = JSON.stringify(productArray);
             const storedData = localStorage.getItem('recently_viewed');
-            if(storedData == null){
-                localStorage.setItem('recently_viewed',productArrayString);
-            }else{
+            if (storedData == null) {
+                localStorage.setItem('recently_viewed', productArrayString);
+            } else {
                 const oldProductData = localStorage.getItem('recently_viewed');
                 const storedProductCount = (oldProductData.match(/productId/g) || []).length;
                 const revisitedProduct = oldProductData.includes(currentproductId);
-                if(storedProductCount < maxProducts && !revisitedProduct){
+                if (storedProductCount < maxProducts && !revisitedProduct) {
                     const parsedResponse = JSON.parse(oldProductData);
                     const updatedProductArray = parsedResponse.concat(productArray);
                     localStorage.setItem('recently_viewed', JSON.stringify(updatedProductArray));
-                }else if(storedProductCount >= maxProducts && !revisitedProduct){
+                } else if (storedProductCount >= maxProducts && !revisitedProduct) {
                     const parsedResponse = JSON.parse(oldProductData);
                     parsedResponse.shift();
                     const updatedProductArray = parsedResponse.concat(productArray);
-                    localStorage.setItem('recently_viewed',JSON.stringify(updatedProductArray));
+                    localStorage.setItem('recently_viewed', JSON.stringify(updatedProductArray));
                 }
             }
         }
@@ -67,7 +69,7 @@
             $('#recentlyViewedProduct').html(recentProductsBlock);
         }
         displayRecentlyViewedProducts();
-    })
+    });
 </script>
 
 {% schema %}
