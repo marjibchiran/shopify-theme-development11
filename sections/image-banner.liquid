@@ -3,14 +3,20 @@
     opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
   }
   .banner-content {
-      max-width: {{ section.settings.content_width }}%;
+    max-width: {{ section.settings.content_width }}%;
+  }
+  .container.banner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
   }
   @media (max-width: 768px) {
-     .banner-content {
+    .banner-content {
       max-width: 100%;
-      padding: 20px; 
+      padding: 20px;
       text-align: center;
-      }
+    }
   }
 {% endstyle %}
 
