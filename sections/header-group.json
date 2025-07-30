@@ -53,24 +53,11 @@
         "menu": "main-menu",
         "mega-menu": true
       }
-    },
-    "image_banner_d9CYek": {
-      "type": "image-banner",
-      "name": "Custom Hero Banner",
-      "settings": {
-        "image": "shopify://shop_images/browsing-clothing.jpg",
-        "content_width": 60,
-        "heading": "COMFY, COZY, CHIC",
-        "sub-heading": "<p>Sustainable, Yoga clothes, Workout clothes and activewear. Handcrafted in America</p>",
-        "label_1": "SHOP MOST POPULAR STYLES",
-        "url_1": ""
-      }
     }
   },
   "order": [
     "announcementbar",
     "announcementbar_drRdL9",
-    "header",
-    "image_banner_d9CYek"
+    "header"
   ]
 }

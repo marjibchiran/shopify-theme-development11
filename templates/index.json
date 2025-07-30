@@ -9,6 +9,18 @@
  */
 {
   "sections": {
+    "image_banner_X4je4N": {
+      "type": "image-banner",
+      "name": "Image Banner",
+      "settings": {
+        "image": "shopify://shop_images/browsing-clothing.jpg",
+        "content_width": 60,
+        "heading": "COMFY, COZY, CHIC",
+        "sub-heading": "<p>Sustainable, Yoga clothes, Workout clothes and activewear. Handcrafted in America</p>",
+        "label_1": "SHOP MOST POPULAR STYLES",
+        "url_1": ""
+      }
+    },
     "featured_collection_Mftzt7": {
       "type": "featured-collection",
       "settings": {
@@ -84,6 +96,7 @@
     }
   },
   "order": [
+    "image_banner_X4je4N",
     "featured_collection_Mftzt7",
     "multicolumn_eJVKDd",
     "recently_viewed_D9HcxR",
