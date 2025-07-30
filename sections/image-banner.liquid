@@ -1,81 +1,124 @@
-{% style %}
-  .banner-content {
-      max-width: {{ section.settings.content_width }}%;
-  }
-  @media (max-width: 768px) {
-      .banner-content {
-          max-width: 100%;
-          padding-left: 80px;
-      }
-  }
-{% endstyle %}
-
-<div class="image-banner-{{ section.id }}">
-  <div class="image-banner-main">
-    {% if section.settings.image != blank %}
-      {% assign image_width = section.settings.image.width | divided_by: section.settings.image.aspect_ratio %}
-      {{
-        section.settings.image
-        | image_url: width: 1975
-        | image_tag: width: 1975, heights: image_width, fetchpriority: 'auto'
-      }}
-    {% else %}
-      {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
-    {% endif %}
-    <div class="container banner-container">
-      <div class="banner-content text-white fs-5">
-        <h1>{{ section.settings.heading }}</h1>
-        {% if section.settings['sub-heading'] != blank %}
-          <p>{{ section.settings['sub-heading'] }}</p>
-        {% endif %}
-        <div class="banner-CTA">
-          <div class="cta-action">
-            <a href="{{ section.settings.url_1 }}" class="btn bg-btn-color text-white px-3 py-2">
-              {{- section.settings.label_1 -}}
-            </a>
-          </div>
+<section
+  class="hero-banner"
+  style="background-image:url({{ section.settings.hero_image | image_url }})"
+>
+  {% assign overlay = section.settings.overlay %}
+  {% if overlay == true %}
+    <div class="s-overlay">{{ section.settings.overlay }}</div>
+  {% endif %}
+  <div class="container">
+    <div class="hero-content">
+      <h1>{{ section.settings.title }}</h1>
+      <p>{{ section.settings.text }}</p>
+      <div class="banner-CTA">
+        <div class="cta-action">
+          <a href="{{ section.settings.url_1 }}" class="btn-color">
+            {{- section.settings.label_1 -}}
+          </a>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>
+
+<style>
+              .hero-banner {
+                background-size: cover;
+                position:relative;
+              }
+            .s-overlay {
+                position: absolute;
+                background: #454f5b5c;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 0;
+            }
+
+              .container {
+                width: calc(100% - 150px);
+                margin: auto;
+              }
+
+             .hero-content {
+                min-height: 80vh;
+                padding: 50px 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                position: relative;
+                z-index: 2;
+            }
+
+              .hero-content h1 {
+                font-size: 67px;
+                color: {{ section.settings.color}};
+                margin: 0;
+              }
+
+              .hero-content p {
+                font-size: 20px;
+                color: {{ section.settings.color}};
+              }
+        .banner-CTA {
+          margin-top: 20px;
+      }
+         .btn-color {
+            color: white;
+            background: #e11687;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+            .btn-color:hover{
+              background:#9b0f5d;
+              border-radius: 20px;
+            }
+    #shopify-section-testimonial-section .multicolumn {
+      padding: 35px 0px;
+      background: #eaeaea;
+      margin: 60px 0;
+  }
+</style>
 
 {% schema %}
 {
-    "name": "Image Banner",
-    "settings": [
-        {
-            "type": "image_picker",
-            "id": "image",
-            "label": "Image"
-        },
-        {
-            "type": "header",
-            "content": "banner-content"
-        },
-        {
-            "type": "range",
-            "id": "content_width",
-            "label": "Content Width",
-            "min": 40,
-            "max": 100,
-            "step": 1,
-            "unit": "%",
-            "default": 60
-        },
-        {
-            "type": "text",
-            "id": "heading",
-            "label": "Heading",
-            "default": "COMFY, COZY, CHIC"
-        },
-        {
-            "type": "richtext",
-            "id": "sub-heading",
-            "label": "Sub Heading",
-            "default": "<p>Sustainable, Yoga clothes, Workout clothes and activewear. Handcrafted in America</p>"
-        },
-        {
+  "name": "Custom Landing Page",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Select Hero Image"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Select Hero Title",
+      "default": "Write Your Landing Page Title"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Write Your Text",
+      "default": "<p>Write Your Text</p>"
+    },
+     {
+      "type": "color",
+      "id": "color",
+      "label": "Pick Your Color",
+      "default":"#000"
+    },
+    {
+      "type": "checkbox",
+      "id": "overlay",
+      "label": "Select Overlay",
+      "default":false
+    },
+    {
             "type": "text",
             "id": "label_1",
             "label": "Button Label",
@@ -86,12 +129,7 @@
             "id": "url_1",
             "label": "Button Link"
         }
-    ],
-        "presets": [
-            {
-                "name": "Image Banner",
-                "category": "Image"
-            }
-        ]
-    }
+
+  ]
+}
 {% endschema %}
