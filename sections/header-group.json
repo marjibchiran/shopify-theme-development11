@@ -58,9 +58,10 @@
       "type": "image-banner",
       "name": "Custom Hero Banner",
       "settings": {
+        "hero_image": "shopify://shop_images/browsing-clothing.jpg",
         "title": "Write Your Landing Page Title",
         "text": "<p>Write Your Text</p>",
-        "color": "#000",
+        "color": "#ffffff",
         "overlay": false,
         "label_1": "SHOP MOST POPULAR STYLES",
         "url_1": ""
