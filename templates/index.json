@@ -12,16 +12,13 @@
     "image_banner": {
       "type": "image-banner",
       "settings": {
-        "image": "shopify://shop_images/browsing-clothing.jpg",
-        "image_overlay_opacity": 0,
-        "content_width": 50,
-        "heading": "COMFY, COZY, CHIC",
-        "sub-heading": "<p>Sustainable, Yoga clothes, Workout clothes and activewear. Handcrafted in America</p>",
+        "hero_image": "shopify://shop_images/browsing-clothing.jpg",
+        "title": "Write Your Landing Page Title",
+        "text": "<p>Write Your Text</p>",
+        "color": "#ffffff",
+        "overlay": true,
         "label_1": "SHOP MOST POPULAR STYLES",
-        "url_1": "",
-        "desktop_content_position": "middle-left",
-        "mobile_content_position": "middle-center",
-        "color_scheme": ""
+        "url_1": ""
       }
     },
     "featured_collection_Mftzt7": {
