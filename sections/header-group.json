@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "header group",
   "type": "header",
@@ -53,11 +53,24 @@
         "menu": "main-menu",
         "mega-menu": true
       }
+    },
+    "image_banner_d9CYek": {
+      "type": "image-banner",
+      "name": "Custom Hero Banner",
+      "settings": {
+        "title": "Write Your Landing Page Title",
+        "text": "<p>Write Your Text</p>",
+        "color": "#000",
+        "overlay": false,
+        "label_1": "SHOP MOST POPULAR STYLES",
+        "url_1": ""
+      }
     }
   },
   "order": [
     "announcementbar",
     "announcementbar_drRdL9",
-    "header"
+    "header",
+    "image_banner_d9CYek"
   ]
 }

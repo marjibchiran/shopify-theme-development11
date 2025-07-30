@@ -9,18 +9,6 @@
  */
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
-      "settings": {
-        "hero_image": "shopify://shop_images/browsing-clothing.jpg",
-        "title": "Write Your Landing Page Title",
-        "text": "<p>Write Your Text</p>",
-        "color": "#ffffff",
-        "overlay": true,
-        "label_1": "SHOP MOST POPULAR STYLES",
-        "url_1": ""
-      }
-    },
     "featured_collection_Mftzt7": {
       "type": "featured-collection",
       "settings": {
@@ -96,7 +84,6 @@
     }
   },
   "order": [
-    "image_banner",
     "featured_collection_Mftzt7",
     "multicolumn_eJVKDd",
     "recently_viewed_D9HcxR",
