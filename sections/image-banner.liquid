@@ -1,4 +1,7 @@
 {% style %}
+  #Banner-{{ section.id }}::after {
+    opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
+  }
   .banner-content {
       max-width: {{ section.settings.content_width }}%;
   }
@@ -49,6 +52,16 @@
             "id": "image",
             "label": "Image"
         },
+        {
+      "type": "range",
+      "id": "image_overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "%",
+      "label": "t:sections.image-banner.settings.image_overlay_opacity.label",
+      "default": 0
+      },
         {
             "type": "header",
             "content": "banner-content"
