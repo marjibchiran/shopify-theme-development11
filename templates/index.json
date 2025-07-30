@@ -11,6 +11,7 @@
   "sections": {
     "image_banner_X4je4N": {
       "type": "image-banner",
+      "disabled": true,
       "name": "Image Banner",
       "settings": {
         "image": "shopify://shop_images/browsing-clothing.jpg",
