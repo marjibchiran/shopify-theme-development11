@@ -1,6 +1,151 @@
-{% schema %}
-  {
-    "name": "Section name",
-    "settings": []
+{{ 'video-banner.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign aspect_ratio = section.settings.aspect_ratio
+  assign ratio_parts = aspect_ratio | split: '/'
+  assign padding_percentage = ratio_parts[1] | times: 100.0 | divided_by: ratio_parts[0]
+  assign border_active = section.settings.border_active
+  assign border_inactive = section.settings.border_inactive
+%}
+
+<style>
+  .video-container-{{ section.id }} {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    max-height: calc(100vh - 80px);
+    overflow: hidden;
+    --border-active: {{ border_active }};
+    --border-inactive: {{ border_inactive }};
   }
+
+  .video-container-{{ section.id }}::before {
+    content: "";
+    display: block;
+    padding-bottom: {{ padding_percentage }}%;
+  }
+</style>
+
+<section 
+  class="video-container-{{ section.id }}" 
+  data-section-id="{{ section.id }}"
+  data-section-type="video-thumbnail-slider"
+>
+  {% for block in section.blocks %}
+    <div class="video-wrapper">
+      <video 
+        class="video video-{{ section.id }} {% if forloop.first %}loaded{% endif %}" 
+        muted 
+        autoplay 
+        loop 
+        playsinline 
+        preload="metadata"
+      >
+        <source src="{{ block.settings.video_url }}" type="video/mp4">
+      </video>
+  
+      <div class="video-overlay overlay-{{ section.id }} overlay-{{ forloop.index0 }}" hidden>
+        <div class="overlay-content">
+          <h2>{{ block.settings.overlay_heading }}</h2>
+          <a href="{{ block.settings.overlay_link }}" class="overlay-button">
+            {{ block.settings.overlay_button }}
+          </a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+
+  <ul class="navigation navigation-{{ section.id }}">
+    {% for block in section.blocks %}
+      {% assign alt_text = block.settings.thumbnail.alt | default: 'Video thumbnail' | escape %}
+      <li
+        data-video-src="{{ block.settings.video_url }}"
+        data-button-url="{{ block.settings.overlay_link }}"
+        {% if forloop.first %}class="active"{% endif %}
+        role="button"
+        tabindex="0"
+        aria-label="Play video: {{ alt_text }}"
+      >
+        <img 
+          src="{{ block.settings.thumbnail | image_url: width: 200, height: 112, crop: 'center' }}" 
+          alt="{{ alt_text }}"
+          loading="lazy"
+          width="200"
+          height="112"
+        >
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<script src="{{ 'video-banner.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Video Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "aspect_ratio",
+      "label": "Aspect ratio",
+      "info": "Enter the aspect ratio like 16/9, 3/2 etc",
+      "default": "16/9"
+    },
+    {
+      "type": "color",
+      "id": "border_active",
+      "label": "Active thumbnail border",
+      "default": "#ff4500"
+    },
+    {
+      "type": "color",
+      "id": "border_inactive",
+      "label": "Inactive thumbnail border",
+      "default": "#808080"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Video with Thumbnail",
+      "type": "video_thumbnail",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "thumbnail",
+          "label": "Thumbnail image"
+        },
+        {
+          "type": "text",
+          "id": "video_url",
+          "label": "Video URL",
+          "default": "https://cdn.shopify.com/videos/c/o/v/2f66684162df41a2a64732a1148aa596.mp4"
+        },
+        {
+          "type": "text",
+          "id": "overlay_heading",
+          "label": "Overlay heading",
+          "default": "Experience the Difference"
+        },
+        {
+          "type": "text",
+          "id": "overlay_button",
+          "label": "Overlay button text",
+          "default": "Shop Now"
+        },
+        {
+          "type": "url",
+          "id": "overlay_link",
+          "label": "Overlay button link",
+          "default": "/collections/all"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video Banner"
+    }
+  ]
+}
 {% endschema %}

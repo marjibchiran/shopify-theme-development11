@@ -1,0 +1,189 @@
+[data-section-type="video-thumbnail-slider"] *,
+[data-section-type="video-thumbnail-slider"] *::before,
+[data-section-type="video-thumbnail-slider"] *::after {
+  box-sizing: border-box;
+}
+
+[data-section-type="video-thumbnail-slider"] {
+  background: #272727;
+  overflow-x: hidden;
+  position: relative;
+  box-sizing: border-box;
+}
+
+[data-section-type="video-thumbnail-slider"] .video-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+[data-section-type="video-thumbnail-slider"] .video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #272727;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 50;
+}
+
+[data-section-type="video-thumbnail-slider"] .video.loaded {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+[data-section-type="video-thumbnail-slider"] .video-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  z-index: 200;
+  pointer-events: none;
+}
+
+[data-section-type="video-thumbnail-slider"] .video-overlay.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+[data-section-type="video-thumbnail-slider"] .overlay-content {
+  text-align: center;
+  color: #fff;
+  pointer-events: auto;
+  z-index: 201;
+  position: relative;
+  max-width: 100%;
+  word-break: break-word;
+}
+
+[data-section-type="video-thumbnail-slider"] .overlay-content h2 {
+  font-size: clamp(1.25rem, calc(0.0625rem + 2.08vw), 2.5rem);
+  color: #faf6f9;
+}
+
+[data-section-type="video-thumbnail-slider"] .overlay-button {
+  margin-top: 1rem;
+  padding: 10px 20px;
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+  font-size: clamp(1.25rem, calc(0.0625rem + 1.67vw), 2rem);
+  font-weight: bold;
+  border-radius: 4px;
+  max-width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: 0.3s ease;
+  will-change: transform;
+}
+
+/* Fixed specificity for button states */
+[data-section-type="video-thumbnail-slider"] .overlay-button:hover,
+[data-section-type="video-thumbnail-slider"] .overlay-button:focus,
+[data-section-type="video-thumbnail-slider"] .overlay-button:active {
+  transform: scale(0.95);
+  padding: 7px 15px;
+  outline: 2px solid #333; /* Better focus indicator */
+}
+
+.video:not(.loaded) + .video-overlay {
+  display: none !important;
+}
+
+[data-section-type="video-thumbnail-slider"] .navigation {
+  position: absolute;
+  max-width: 100%;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-top: 10px;
+  padding-bottom: 40px;
+  margin: 0;
+  z-index: 300;
+  display: flex;
+  justify-content: center;
+}
+
+[data-section-type="video-thumbnail-slider"] .navigation li {
+  list-style: none;
+  cursor: pointer;
+  margin: 0 10px;
+  border-radius: 4px;
+  border: 3px solid var(--border-inactive);
+  opacity: 0.7;
+  transition: 0.5s;
+  outline: none;
+}
+
+[data-section-type="video-thumbnail-slider"] .navigation li:hover {
+  transform: scale(1.2);
+  margin-inline: 20px;
+  opacity: 1;
+}
+
+[data-section-type="video-thumbnail-slider"] .navigation li.active {
+  border-color: var(--border-active);
+  opacity: 1;
+  transform: scale(1.1);
+  margin-inline: 15px;
+}
+
+[data-section-type="video-thumbnail-slider"] .navigation img {
+  width: 120px;
+  height: auto;
+  aspect-ratio: 16/9;
+  display: block;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+@media screen and (max-width: 750px) {
+  [data-section-type="video-thumbnail-slider"] {
+    display: block;
+    position: relative;
+    max-height: none;
+    padding-bottom: 0;
+  }
+
+  [data-section-type="video-thumbnail-slider"] .navigation {
+    position: relative;
+    z-index: 300;
+    flex-wrap: wrap;
+    transform: none;
+    left: auto;
+    padding: 10px 5px;
+    margin-top: 20px;
+    gap: 8px;
+    justify-content: center;
+    /* Removed background: transparent to keep gradient */
+  }
+
+  [data-section-type="video-thumbnail-slider"] .navigation li {
+    border: 2px solid var(--border-inactive);
+    margin: 5px;
+    transform: none !important; 
+  }
+
+  [data-section-type="video-thumbnail-slider"] .navigation li.active {
+    margin-inline: 5px;
+    transform: scale(1.05) !important; /* Subtle active state */
+  }
+
+  [data-section-type="video-thumbnail-slider"] .navigation img {
+    width: 70px;
+  }
+}
