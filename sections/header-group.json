@@ -53,11 +53,58 @@
         "menu": "main-menu",
         "mega-menu": true
       }
+    },
+    "video_banner_UKdUg4": {
+      "type": "video-banner",
+      "blocks": {
+        "video_thumbnail_hndYjz": {
+          "type": "video_thumbnail",
+          "settings": {
+            "thumbnail": "shopify://shop_images/HeatherCharcoalFullLengthPocketLeggings_800x_cdd04a0b-729c-4920-bb57-3d225f4e43f6.jpg",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/2f66684162df41a2a64732a1148aa596.mp4",
+            "overlay_heading": "Experience the Difference",
+            "overlay_button": "Shop Now",
+            "overlay_link": "shopify://collections/all"
+          }
+        },
+        "video_thumbnail_4BNMfV": {
+          "type": "video_thumbnail",
+          "settings": {
+            "thumbnail": "shopify://shop_images/IMG_E5664_600x_7e2bb57a-3447-4aa2-b65e-2729f2332a7f.jpg",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/2f66684162df41a2a64732a1148aa596.mp4",
+            "overlay_heading": "Experience the Difference",
+            "overlay_button": "Shop Now",
+            "overlay_link": "shopify://collections/all"
+          }
+        },
+        "video_thumbnail_jjpAAq": {
+          "type": "video_thumbnail",
+          "settings": {
+            "thumbnail": "shopify://shop_images/IMG_E5635_600x_0e03e87e-f5f6-4eac-a140-21a1755b8016.jpg",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/2f66684162df41a2a64732a1148aa596.mp4",
+            "overlay_heading": "Experience the Difference",
+            "overlay_button": "Shop Now",
+            "overlay_link": "shopify://collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "video_thumbnail_hndYjz",
+        "video_thumbnail_4BNMfV",
+        "video_thumbnail_jjpAAq"
+      ],
+      "name": "Video Banner",
+      "settings": {
+        "aspect_ratio": "16/9",
+        "border_active": "#ff4500",
+        "border_inactive": "#808080"
+      }
     }
   },
   "order": [
     "announcementbar",
     "announcementbar_drRdL9",
-    "header"
+    "header",
+    "video_banner_UKdUg4"
   ]
 }
